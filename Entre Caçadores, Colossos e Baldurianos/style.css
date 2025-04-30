@@ -1,0 +1,79 @@
+*{
+    margin: 0px;
+}
+
+.nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color:sienna;
+    color: aliceblue; 
+    margin: 0%;  
+    height: 70px;
+    font-family: Lugrasimo;
+
+}
+
+.nav hr{
+    width: 900px;
+}
+
+
+.bloodborne{
+    background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
+    url(./imagens/bloodborne_inicial.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: 700px;
+    color: aliceblue;
+    background-position: center;
+}
+
+.bloodborne .container{
+    display: flex;
+    margin-left: 40px;
+    flex-direction: column;
+    width: 50%;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+.bloodborne .nomeJogo{
+    display: flex;
+    font-family: Fleshandblood;
+    font-size: 58px;
+  
+}
+
+
+.colossus{
+    background-image:
+    linear-gradient(to left, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)),
+    url(./imagens/sotc_inicial.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: 700px;
+    color: aliceblue;
+    justify-content: space-around;
+    align-items: flex-end;
+    background-position: center;
+}
+
+
+.colossus .nomeJogo{
+    display: flex;
+    flex-direction: column;
+    font-family: Caslon Antique;
+    font-size: 50px;
+    justify-content: center;
+    align-items: center;
+    margin-right: 40px;
+}
+.colossus .nomeJogo span{
+    font-size: 30px;
+}
