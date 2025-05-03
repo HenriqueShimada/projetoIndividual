@@ -3,22 +3,53 @@
 }
 
 .nav{
+    position: fixed;
     display: flex;
-    justify-content: center;
+    justify-content:flex-start;
     align-items: center;
     flex-direction: column;
-    background-color:sienna;
-    color: aliceblue; 
+    background-image:url(./imagens/menu_cima.png);
+    background-position: 500px 230px;
+    background-size: cover;
+    color:goldenrod; 
     margin: 0%;  
-    height: 70px;
+    height: 170px;
+    width: 100%;
     font-family: Lugrasimo;
-
+    z-index: 1;
+    background-position: center;
+}
+.nav h1{
+    margin-top: 20px;
 }
 
 .nav hr{
     width: 900px;
 }
 
+
+.agradecimento {
+    background: linear-gradient(to bottom, #111 40%, #1c1c1c 100%);
+    color: #f0e6d2;
+    padding: 80px 40px;
+    font-family: 'Georgia', serif;
+    text-align: center;
+    height: 400px;
+}
+
+.agradecimento h2 {
+    font-size: 36px;
+    color: goldenrod;
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
+
+.agradecimento p {
+    font-size: 20px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+}
 
 .bloodborne{
     background-image:
@@ -32,7 +63,7 @@
     background-position: center;
 }
 
-.bloodborne .container{
+.container{
     display: flex;
     margin-left: 40px;
     flex-direction: column;
@@ -70,10 +101,27 @@
     flex-direction: column;
     font-family: Caslon Antique;
     font-size: 50px;
-    justify-content: center;
     align-items: center;
-    margin-right: 40px;
+
 }
 .colossus .nomeJogo span{
     font-size: 30px;
+ 
+}
+
+.bg3{
+    background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
+    url("./imagens/bg3_inicial.png");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: 700px;
+    color: aliceblue;
+    background-position: center;
+}
+
+
+.nomeJogopng{
+    height: 150px;
 }
