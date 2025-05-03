@@ -54,7 +54,7 @@
 .bloodborne{
     background-image:
     linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
-    url(./imagens/bloodborne_inicial.jpg);
+    url(./imagens/bloodborne_inicial_esfumacado.png);
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -84,7 +84,7 @@
 .colossus{
     background-image:
     linear-gradient(to left, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)),
-    url(./imagens/sotc_inicial.jpg);
+    url(./imagens/sotc_inicial_esfumacado.png);
     background-size: cover;
     display: flex;
     flex-direction: column;
