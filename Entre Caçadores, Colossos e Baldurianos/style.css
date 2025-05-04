@@ -2,6 +2,17 @@
     margin: 0px;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #111 40%, #1c1c1c 100%);    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; 
+    background-position: center;
+    color: white;
+    font-family: Georgia;
+}
+
 .nav{
     position: fixed;
     display: flex;
@@ -15,7 +26,7 @@
     margin: 0%;  
     height: 170px;
     width: 100%;
-    font-family: Lugrasimo;
+    font-family: 'Georgia', serif;
     z-index: 1;
     background-position: center;
 }
@@ -29,12 +40,25 @@
 
 
 .agradecimento {
-    background: linear-gradient(to bottom, #111 40%, #1c1c1c 100%);
     color: #f0e6d2;
-    padding: 80px 40px;
+    padding: 105px 40px 80px;
     font-family: 'Georgia', serif;
     text-align: center;
     height: 400px;
+}
+
+.homemLeao{
+    display: flex;
+    flex-direction: row;
+    font-family: 'Georgia', serif;
+    text-align: center;
+    height: 400px;
+    justify-content: flex-start;
+}
+
+.homemLeao img{
+    margin-left: 60px;
+    height: 450px;
 }
 
 .agradecimento h2 {
@@ -51,19 +75,66 @@
     margin: 0 auto 20px auto;
 }
 
-.bloodborne{
-    background-image:
-    linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
-    url(./imagens/bloodborne_inicial_esfumacado.png);
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
+.bloodborne {
+    position: relative;
     height: 700px;
+    display: flex;
+    align-items: flex-start;
+    justify-content:flex-start;
+    overflow: hidden;
     color: aliceblue;
+    margin: 30px;
+}
+  
+.bloodborne .fundoMascarado {
+    position: absolute;
+    inset: 0;
+    background-image: url("./imagens/bloodborne_inicial_esfumacado.png");
+    background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+  
+    mask-image: linear-gradient(to right, transparent, black);
+    -webkit-mask-image: linear-gradient(to right, transparent, black);
+    z-index: 0;
 }
 
+
+.botao {
+    position: relative;
+    background: none;
+    border: none;
+    color: #cdbd9c;
+    font-size: 1.5rem;
+    font-family:Georgia, 'Times New Roman'; 
+    cursor: pointer;
+    transition: color 0.3s ease;
+    text-shadow: 0 0 2px #000;
+  }
+  
+ .botao::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: rgba(251, 243, 188, 0.2);
+    filter: blur(8px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+  }
+  
+ .botao:hover {
+    color: #cdb27c;
+  }
+  
+ .botao:hover::after {
+    opacity: 1;
+  }
+
 .container{
+    z-index: 1;
+    position: relative;
     display: flex;
     margin-left: 40px;
     flex-direction: column;
@@ -71,6 +142,7 @@
     justify-content: space-around;
     align-items: center;
     height: 100%;
+    z-index: 1;
 }
 
 .bloodborne .nomeJogo{
@@ -81,19 +153,33 @@
 }
 
 
-.colossus{
-    background-image:
-    linear-gradient(to left, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)),
-    url(./imagens/sotc_inicial_esfumacado.png);
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
+
+
+.colossus {
+    position: relative;
     height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content:flex-end;
+    overflow: hidden;
     color: aliceblue;
-    justify-content: space-around;
-    align-items: flex-end;
-    background-position: center;
+    margin: 30px;
 }
+  
+.colossus .fundoMascarado {
+    position: absolute;
+    inset: 0;
+    background-image: url("./imagens/sotc_inicial_esfumacado.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  
+    mask-image: linear-gradient(to left, transparent, black);
+    -webkit-mask-image: linear-gradient(to left, transparent, black);
+    z-index: 0;
+}
+
+
 
 
 .colossus .nomeJogo{
@@ -109,19 +195,35 @@
  
 }
 
-.bg3{
-    background-image:
-    linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
-    url("./imagens/bg3_inicial.png");
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    height: 700px;
-    color: aliceblue;
-    background-position: center;
-}
+
+
 
 
 .nomeJogopng{
     height: 150px;
+}
+
+.bg3 {
+    position: relative;
+    height: 700px;
+    display: flex;
+    align-items: flex-start;
+    justify-content:flex-start;
+    overflow: hidden;
+    color: aliceblue;
+    margin: 30px;
+    margin: 30px
+}
+  
+.bg3 .fundoMascarado {
+    position: absolute;
+    inset: 0;
+    background-image: url("./imagens/bg3_inicial_esfumacado.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  
+    mask-image: linear-gradient(to right, transparent, black);
+    -webkit-mask-image: linear-gradient(to right, transparent, black);
+    z-index: 0;
 }
