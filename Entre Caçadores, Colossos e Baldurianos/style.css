@@ -41,10 +41,25 @@ body {
 
 .agradecimento {
     color: #f0e6d2;
-    padding: 105px 40px 80px;
-    font-family: 'Georgia', serif;
+    padding: 75px 50px 100px;
     text-align: center;
     height: 400px;
+    margin-bottom: 40px;
+}
+
+.agradecimento h2 {
+    font-size: 36px;
+    color: goldenrod;
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
+
+.agradecimento p {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    text-align:start;
 }
 
 .homemLeao{
@@ -57,23 +72,12 @@ body {
 }
 
 .homemLeao img{
-    margin-left: 60px;
+    margin-left: 150px;
     height: 450px;
 }
 
-.agradecimento h2 {
-    font-size: 36px;
-    color: goldenrod;
-    margin-bottom: 30px;
-    margin-top: 40px;
-}
 
-.agradecimento p {
-    font-size: 20px;
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 0 auto 20px auto;
-}
+
 
 .bloodborne {
     position: relative;
@@ -109,10 +113,9 @@ body {
     font-family:Georgia, 'Times New Roman'; 
     cursor: pointer;
     transition: color 0.3s ease;
-    text-shadow: 0 0 2px #000;
-  }
+    text-shadow: 0 0 2px #000; }
   
- .botao::after {
+.botao::after {
     content: '';
     position: absolute;
     inset: 0;
@@ -122,21 +125,26 @@ body {
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: -1;
-  }
+}
   
- .botao:hover {
+.botao:hover {
     color: #cdb27c;
-  }
+}
   
- .botao:hover::after {
+.botao:hover::after {
     opacity: 1;
-  }
+}
+
+.descricaoJogo{
+    font-size: 20px;
+}
 
 .container{
     z-index: 1;
     position: relative;
     display: flex;
     margin-left: 40px;
+    margin-right: 40px;
     flex-direction: column;
     width: 50%;
     justify-content: space-around;
