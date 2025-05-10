@@ -234,12 +234,37 @@ body {
     margin: 30px;
 }
   
-.introColossus .fundoMascarado {
+.introColossus  .fundoMascarado1{
     position: absolute;
     inset: 0;
     background-image: url(./imagens/mono_morta.png);
     background-size: cover;
     background-position: center;
+    z-index: 0;
+    opacity: 1;
+    transition: opacity 2s ease;
+}
+
+.introColossus .fundoMascarado2{
+    position: absolute;
+    inset: 0;
+    background-image: url(./imagens/espada_luz.jpg);
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    opacity: 1;
+    transition: opacity 2s ease;
+}
+
+.introColossus  .fundoMascarado3{
+    position: absolute;
+    inset: 0;
+    background-image: url(./imagens/colosso_inicial.png);
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    opacity: 1;
+    transition: opacity 2s ease;
 }
 
 .introColossus .container{
@@ -254,8 +279,15 @@ body {
     z-index: 1;
 }
 
-.introColossus #div_legenda{
+.introColossus #div_legenda {
     height: 40px;
     font-family: papyrus;
     font-size: 25px;
+    color: white;
+    text-shadow: 2px 2px 5px #000,
+    -2px -2px 5px #000,
+    -2px 2px 5px #000,
+    2px -2px 5px #000;
 }
+
+

@@ -1,73 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
-<div class="conteudo">
 
-    <div class="introColossus">
-        <div class="fundoMascarado"></div>
-        
-        <div class="container">
+    <div class="conteudo">
 
-            <button class="botao" onclick="ouvir()">Ouvir a Dormin</button>
+        <div class="introColossus">
+            <div  class="fundoMascarado3" ></div>
+            <div  class="fundoMascarado2"></div>
+            <div  class="fundoMascarado1"></div>
+            <div class="container">
 
-            <div id="div_legenda"></div>
+                <button class="botao" onclick="ouvir()">Ouvir a Dormin</button>
+
+                <div class="fundoLegenda">
+                    <div id="div_legenda"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="jornadaColosso">
+
+            
 
         </div>
+
     </div>
 
-</div>
 
 
-<audio id="dormin">
-    <source src="./audios/vozDorminRecortado.mp3" type="audio/mpeg">
-</audio>
-    
+    <audio id="dormin">
+        <source src="./audios/vozDorminRecortado.mp3" type="audio/mpeg">
+    </audio>
+
 </body>
+
 </html>
 
 
+<p style="display: flex; justify-content: center;"></p>
 
 <script>
     function ouvir() {
-      var audio = document.getElementById("dormin");
-      audio.play();
-      div_legenda.innerHTML = "";
+        var audio = document.getElementById("dormin");
+        audio.play();
+        div_legenda.innerHTML = "";
 
-    setTimeout(() => {
-    div_legenda.innerHTML = "Erga sua espada contra a luz...";
-    }, 1000);
+        setTimeout(() => {
+            div_legenda.innerHTML = "Erga sua espada contra a luz...";
+        }, 1000);
 
-    setTimeout(() => {
-    div_legenda.innerHTML = "";
-    }, 8000);
+        setTimeout(() => {
+            div_legenda.innerHTML = "Erga sua espada contra a luz...";
+        }, 1000);
 
-    // Legenda 2: aparece aos 3s e dura até os 6s
-    setTimeout(() => {
-    div_legenda.innerHTML = "E siga a direção onde a luz apontar...";
-    }, 10000);
+        setTimeout(() => {
+            div_legenda.innerHTML = "";
+        }, 8000);
 
-    setTimeout(() => {
-    div_legenda.innerHTML = "";
-    }, 15000);
+        setTimeout(() => {
+            div_legenda.innerHTML = "E siga a direção onde a luz apontar...";
+        }, 10000);
 
-    setTimeout(() => {
-    div_legenda.innerHTML = "E então encontrará o colosso que irá derrotar...";
-    }, 15000);
+        setTimeout(() => {
+          document.querySelector('.fundoMascarado1').style.opacity = 0;
+        }, 11000);
 
-    setTimeout(() => {
-    div_legenda.innerHTML = "";
-    }, 20000);
-}
+        setTimeout(() => {
+            div_legenda.innerHTML = "E então encontrará o colosso que irá derrotar...";
+        }, 15000);
+
+        setTimeout(() => {
+            document.querySelector('.fundoMascarado2').style.opacity = 0;
+        }, 17000);
+
+        setTimeout(() => {
+            div_legenda.innerHTML = "";
+        }, 20000);
+
+        setTimeout(() => {
+            document.querySelector('.fundoMascarado1').style.opacity = 1;
+        }, 20500);
+
+        setTimeout(() => {
+            document.querySelector('.fundoMascarado2').style.opacity = 1;
+        }, 21000);
+
+    }
 
 
-    
+
 </script>
-
-
