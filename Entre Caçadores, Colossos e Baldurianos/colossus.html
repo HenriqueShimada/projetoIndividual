@@ -20,33 +20,48 @@
 
                 <button class="botao" onclick="ouvir()">Ouvir a Dormin</button>
 
-                <div class="fundoLegenda">
-                    <div id="div_legenda"></div>
-                </div>
+                <div id="div_legenda"></div>
 
+                <audio id="dormin">
+                    <source src="./audios/vozDorminRecortado.mp3" type="audio/mp3">
+                </audio>
             </div>
         </div>
 
         <div class="jornadaColosso">
 
-            
+            <p>Nas Terras Proíbidas, o caminho é desconhecido, quais eram os habitantes? O que essas ruínas formavam? Há vida alem de pequenos lagartos ou pássaros?</p>
+
+          
+         <div class="slideshow">
+            <img src="" alt="Imagem 1">
+  
+            <img src="" alt="Imagem 2">
+        </div>
 
         </div>
+
+        <div class="derrotarColosso">
+            <button class="botao" onclick="derrotar()">Derrotar Colosso</button>
+
+            <video id="videoColosso" width="80%" controls autoplay style="display: none;">
+                <source id="videoSource" type="video/mp4">
+            </video>
+        </div>
+
+
 
     </div>
 
 
 
-    <audio id="dormin">
-        <source src="./audios/vozDorminRecortado.mp3" type="audio/mpeg">
-    </audio>
+
 
 </body>
 
 </html>
 
 
-<p style="display: flex; justify-content: center;"></p>
 
 <script>
     function ouvir() {
@@ -71,7 +86,8 @@
         }, 10000);
 
         setTimeout(() => {
-          document.querySelector('.fundoMascarado1').style.opacity = 0;
+            document.querySelector('.fundoMascarado1').style.opacity = 0;
+            document.querySelector('.fundoMascarado2').style.opacity = 1;
         }, 11000);
 
         setTimeout(() => {
@@ -80,6 +96,8 @@
 
         setTimeout(() => {
             document.querySelector('.fundoMascarado2').style.opacity = 0;
+            document.querySelector('.fundoMascarado3').style.opacity = 1;
+
         }, 17000);
 
         setTimeout(() => {
@@ -88,14 +106,44 @@
 
         setTimeout(() => {
             document.querySelector('.fundoMascarado1').style.opacity = 1;
-        }, 20500);
+            document.querySelector('.fundoMascarado3').style.opacity = 0;
 
-        setTimeout(() => {
-            document.querySelector('.fundoMascarado2').style.opacity = 1;
-        }, 21000);
+        }, 20500);
 
     }
 
 
+var videos = ["./videos/colossus1.mp4",
+    "./videos/colossus2.mp4",
+    "./videos/colossus3.mp4",
+    "./videos/colossus4.mp4",
+    "./videos/colossus5.mp4",
+    "./videos/colossus6.mp4",
+    "./videos/colossus7.mp4",
+    "./videos/colossus8.mp4",
+    "./videos/colossus9.mp4",
+    "./videos/colossus10.mp4",
+    "./videos/colossus11.mp4",
+    "./videos/colossus12.mp4",
+    "./videos/colossus13.mp4",
+    "./videos/colossus14.mp4",
+    "./videos/colossus15.mp4",
+    "./videos/colossus16.mp4",
+];
+
+var imagens = ["./imagens/forbiden"
+
+]
+
+function derrotar() {
+    var videoAleatorio = Math.floor(Math.random() * (videos.length -1));
+    var video = document.getElementById("videoColosso");
+    var source = document.getElementById("videoSource");
+
+    source.src = videos[videoAleatorio];
+    video.load();         
+    video.style.display = "block";
+    video.play();     
+}
 
 </script>
