@@ -1,11 +1,13 @@
 *{
     margin: 0px;
+    box-sizing: border-box;
 }
 
 body {
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #111 40%, #1c1c1c 100%);    
+    /* background: linear-gradient(to bottom, #111 40%, #1c1c1c 100%);     */
+    background-image: url(./imagens/fumaca_fundo.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed; 
@@ -64,6 +66,7 @@ body {
     line-height: 1.6;
     margin: 0 auto 20px auto;
     text-align:start;
+    padding-right: 60px;
 }
 
 .homemLeao{
@@ -87,7 +90,8 @@ body {
     align-items: flex-start;
     justify-content:flex-start;
     color: aliceblue;
-    margin: 30px;
+    margin-top: 220px;
+
 }
   
 .bloodborne .fundoMascarado {
@@ -136,6 +140,7 @@ body {
 
 .descricaoJogo{
     font-size: 20px;
+    color: #f0e6d2;
 }
 
 .container{
@@ -174,7 +179,7 @@ body {
 .colossus .fundoMascarado {
     position: absolute;
     inset: 0;
-    background-image: url("./imagens/sotc_inicial_esfumacado.png");
+    background-image: url("./imagens/sotc/sotc_inicial_esfumacado.png");
     background-size: cover;
     background-position: center;
     mask-image: linear-gradient(to left, transparent, black);
@@ -228,17 +233,16 @@ body {
 
 .introColossus {
     position: relative;
-    height: 650px;
+    height: 680px;
     width: 100%;
     display: flex;
     color: aliceblue;
-    margin: 30px;
 }
   
 .introColossus  .fundoMascarado1{
     position: absolute;
     inset: 0;
-    background-image: url(./imagens/mono_morta_esfumacado.png);
+    background-image: url(./imagens/sotc/mono_morta_esfumacado.png);
     background-size: cover;
     background-position: center;
     z-index: 0;
@@ -249,7 +253,7 @@ body {
 .introColossus .fundoMascarado2{
     position: absolute;
     inset: 0;
-    background-image: url(./imagens/espada_luz_esfumacado.png);
+    background-image: url(./imagens/sotc/espada_luz_esfumacado.png);
     background-size: cover;
     background-position: center;
     z-index: 0;
@@ -260,7 +264,7 @@ body {
 .introColossus  .fundoMascarado3{
     position: absolute;
     inset: 0;
-    background-image: url(./imagens/colosso_inicial_esfumacado.png);
+    background-image: url(./imagens/sotc/colosso_inicial_esfumacado.png);
     background-size: cover;
     background-position: top;
     z-index: 0;
@@ -304,40 +308,65 @@ body {
 
 }
 
-.slideshow {
-  position: relative;
-  width: 80%;
-  height: 450px;
-  overflow: hidden;
+.jornadaColosso p{
+    padding: 40px;
+    padding-right: 50px;
+    margin-left: 50px;
 }
 
-.slideshow img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  width: 100%;
-  height: 100%;
-  animation: fade 3s infinite;
-  background-size: cover;
+/* .slideshow_container {
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+    display: flex;
 }
 
+#slideshow {
+    width: 100%;
+    height: auto;
+    transition: opacity 1s ease-in-out; 
+} */
 
-@keyframes fade {
-  0% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  33% {
-    opacity: 1;
-  }
-  53% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
+.swiper {
+    width: 80%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
+.swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.swiper .swiper-button-prev, .swiper .swiper-button-next{
+    color: goldenrod;
+}
+
+.derrotarColosso{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 400px;
+}
+
+.derrotarColosso .simboloColosso img{
+    height: 500px;
+    filter: invert(1) drop-shadow(0 0 5px rgb(108, 213, 239));
+    padding-bottom: 30px;
+}
+.derrotarColosso .descricaoJogo{
+    padding-bottom: 30px;
+}
+
 

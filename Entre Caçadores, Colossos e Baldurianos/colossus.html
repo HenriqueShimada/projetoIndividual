@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -13,9 +14,9 @@
     <div class="conteudo">
 
         <div class="introColossus">
-            <div  class="fundoMascarado3" ></div>
-            <div  class="fundoMascarado2"></div>
-            <div  class="fundoMascarado1"></div>
+            <div class="fundoMascarado3"></div>
+            <div class="fundoMascarado2"></div>
+            <div class="fundoMascarado1"></div>
             <div class="container">
 
                 <button class="botao" onclick="ouvir()">Ouvir a Dormin</button>
@@ -30,18 +31,47 @@
 
         <div class="jornadaColosso">
 
-            <p>Nas Terras Proíbidas, o caminho é desconhecido, quais eram os habitantes? O que essas ruínas formavam? Há vida alem de pequenos lagartos ou pássaros?</p>
+            <p>Nas Terras Proibidas, cada passo é um mergulho no desconhecido. Quem habitava essas ruínas esquecidas? Que histórias ocultas repousam entre as sombras? Há algo além dos lagartos e pássaros que ousam vagar por ali?</p>
 
-          
-         <div class="slideshow">
-            <img src="" alt="Imagem 1">
-  
-            <img src="" alt="Imagem 2">
-        </div>
+
+            <!-- <div class="slideshow_container">
+            <img id="slideshow" src="./imagens/forbiden_lands1.jpg" alt="Imagem 1">
+        </div> -->
+
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./imagens/sotc/forbiden_lands1.jpg" alt="Imagem 1" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./imagens/sotc/cenario_colosso.jpg" alt="Imagem 2" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./imagens/sotc/cenario_colosso2.png" alt="Imagem 3" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./imagens/sotc/deserto_colossus2.jpg" alt="Imagem 4" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./imagens/sotc/pantano_colossus2.png" alt="Imagem 5" />
+                    </div>
+                </div>
+
+                <!-- <div class="swiper-pagination"></div> -->
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
 
         </div>
 
         <div class="derrotarColosso">
+            <p class="descricaoJogo">“O ídolo... deve tombar.”</p>
+
+            <div class="simboloColosso">
+                <img src="./imagens/sotc/simbolo_colossus.png" alt="">
+            </div>
+
             <button class="botao" onclick="derrotar()">Derrotar Colosso</button>
 
             <video id="videoColosso" width="80%" controls autoplay style="display: none;">
@@ -56,10 +86,12 @@
 
 
 
-
 </body>
 
 </html>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 
 
 
@@ -113,37 +145,72 @@
     }
 
 
-var videos = ["./videos/colossus1.mp4",
-    "./videos/colossus2.mp4",
-    "./videos/colossus3.mp4",
-    "./videos/colossus4.mp4",
-    "./videos/colossus5.mp4",
-    "./videos/colossus6.mp4",
-    "./videos/colossus7.mp4",
-    "./videos/colossus8.mp4",
-    "./videos/colossus9.mp4",
-    "./videos/colossus10.mp4",
-    "./videos/colossus11.mp4",
-    "./videos/colossus12.mp4",
-    "./videos/colossus13.mp4",
-    "./videos/colossus14.mp4",
-    "./videos/colossus15.mp4",
-    "./videos/colossus16.mp4",
-];
+    var listaVideos = ["./videos/colossus1.mp4",
+        "./videos/colossus2.mp4",
+        "./videos/colossus3.mp4",
+        "./videos/colossus4.mp4",
+        "./videos/colossus5.mp4",
+        "./videos/colossus6.mp4",
+        "./videos/colossus7.mp4",
+        "./videos/colossus8.mp4",
+        "./videos/colossus9.mp4",
+        "./videos/colossus10.mp4",
+        "./videos/colossus11.mp4",
+        "./videos/colossus12.mp4",
+        "./videos/colossus13.mp4",
+        "./videos/colossus14.mp4",
+        "./videos/colossus15.mp4",
+        "./videos/colossus16.mp4"
+    ];
 
-var imagens = ["./imagens/forbiden"
+    var listaImagens = ["./imagens/forbiden_lands1.jpg",
+        "./imagens/cenario_colosso.jpg",
+        "./imagens/cenario_colosso2.png",
+        "./imagens/deserto_colossus2.jpg",
+        "./imagens/pantano_colossus.png",
+        "./imagens/pantano_colossus2.png"
+    ];
 
-]
+    // var iSlide = 0
 
-function derrotar() {
-    var videoAleatorio = Math.floor(Math.random() * (videos.length -1));
-    var video = document.getElementById("videoColosso");
-    var source = document.getElementById("videoSource");
+    // function passarSlide(){
+    //     var slideShow = document.getElementById("slideshow");
+    //     var contador = setInterval(() => iSlide = -1, (listaImagens.length * 5000));
+    //     var auemntarContador = setInterval(() => iSlide++, 5000);
+    //     var slide = setInterval(() => slideShow.src = listaImagens[iSlide], 5000);
 
-    source.src = videos[videoAleatorio];
-    video.load();         
-    video.style.display = "block";
-    video.play();     
-}
+    // }
+
+
+    // window.onload = function() {
+    //     passarSlide();
+    // }
+
+
+    const swiper = new Swiper('.swiper', {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 20,
+
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        autoplay: {
+            delay: 5000,
+        },
+    });
+
+    function derrotar() {
+        var videoAleatorio = Math.floor(Math.random() * (listaVideos.length - 1));
+        var video = document.getElementById("videoColosso");
+        var source = document.getElementById("videoSource");
+
+        source.src = listaVideos[videoAleatorio];
+        video.load();
+        video.style.display = "block";
+        video.play();
+    }
 
 </script>
