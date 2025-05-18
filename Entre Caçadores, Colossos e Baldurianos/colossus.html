@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Colossus</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
@@ -36,7 +36,7 @@
 
             <!-- <div class="slideshow_container">
             <img id="slideshow" src="./imagens/forbiden_lands1.jpg" alt="Imagem 1">
-        </div> -->
+             </div> -->
 
             <div class="swiper">
                 <div class="swiper-wrapper">
@@ -55,9 +55,26 @@
                     <div class="swiper-slide">
                         <img src="./imagens/sotc/pantano_colossus2.png" alt="Imagem 5" />
                     </div>
-                </div>
+                    <div class="swiper-slide">
+                        <img src="./imagens/sotc/sotc-arid-landscape.jpg" alt="Imagem 6" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./imagens/sotc/sotc-canyon.jpg" alt="Imagem 7" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./imagens/sotc/sotc-cliffside-columns.jpg" alt="Imagem 8" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./imagens/sotc/sotc-save-shrine-and-colossi-pillars.jpg" alt="Imagem 9" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./imagens/sotc/sotc-ruins-landscape-and-colossi-pillars.jpg" alt="Imagem 10" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./imagens/sotc/sotc-ruined-structure.jpg" alt="Imagem 10" />
+                    </div>
 
-                <!-- <div class="swiper-pagination"></div> -->
+                </div>
 
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
@@ -69,17 +86,93 @@
             <p class="descricaoJogo">“O ídolo... deve tombar.”</p>
 
             <div class="simboloColosso">
-                <img src="./imagens/sotc/simbolo_colossus.png" alt="">
+                <img onclick="derrotar()" src="./imagens/sotc/simbolo_colossus.png" alt="">
             </div>
-
-            <button class="botao" onclick="derrotar()">Derrotar Colosso</button>
 
             <video id="videoColosso" width="80%" controls autoplay style="display: none;">
                 <source id="videoSource" type="video/mp4">
             </video>
         </div>
+        <div class="derrotarColosso">
+            <p class="descricaoJogo">“Os ídolos caíram, tua alma está manchada. Resta apenas um.”</p>
 
+            <div class="simboloColosso">
+                <img onclick="derrotarUltimo()" src="./imagens/sotc/simbolo_colossus.png" alt="">
+            </div>
+        </div>
 
+        <div class="arteConceitual">
+
+            
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./imagens/sotc/sotc-colossus-1-valus.jpg" alt="Imagem 1" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./imagens/sotc/sotc-colossus-2-quadratus.jpg" alt="Imagem 2" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./imagens/sotc/sotc-colossus-3-gaius.jpg" alt="Imagem 3" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./imagens/sotc/sotc-colossus-4-phaedra.jpg" alt="Imagem 4" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./imagens/sotc/sotc-colossus-5-avion.jpg" alt="Imagem 5" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./imagens/sotc/sotc-colossus-6-barba.jpg" alt="Imagem 6" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./imagens/sotc/sotc-colossus-7-hydrus.jpg" alt="Imagem 7" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./imagens/sotc/sotc-colossus-8-kuromori.jpg" alt="Imagem " />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./imagens/sotc/sotc-colossus-9-basaran.jpg" alt="Imagem 9" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./imagens/sotc/sotc-colossus-10-dirge.jpg" alt="Imagem 10" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./imagens/sotc/sotc-colossus-11-celosia.jpg" alt="Imagem 11" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./imagens/sotc/sotc-colossus-12-pelagia.jpg" alt="Imagem 12" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./imagens/sotc/sotc-colossus-13-phalanx.jpg" alt="Imagem 13" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./imagens/sotc/sotc-colossus-14-cenobia.jpg" alt="Imagem 14" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./imagens/sotc/sotc-colossus-15-argus.jpg" alt="Imagem 15" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./imagens/sotc/sotc-colossus-16-malus.jpg" alt="Imagem 16" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./imagens/sotc/sotc-colossi.jpg" alt="Imagem 17" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./imagens/sotc/sotc-central-structure-roughs.jpg" alt="Imagem 17" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./imagens/sotc/sotc-ruins-sketch.jpg" alt="Imagem 17" />
+                        <div class="swiper-slide">
+                        <img src="./imagens/sotc/sotc-ruins-sketch.jpg" alt="Imagem 18" />
+                    </div>
+                    </div>
+                </div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+
+        </div>
 
     </div>
 
@@ -202,12 +295,20 @@
         },
     });
 
+    var video = document.getElementById("videoColosso");
+    var source = document.getElementById("videoSource");
+
     function derrotar() {
         var videoAleatorio = Math.floor(Math.random() * (listaVideos.length - 1));
-        var video = document.getElementById("videoColosso");
-        var source = document.getElementById("videoSource");
 
         source.src = listaVideos[videoAleatorio];
+        video.load();
+        video.style.display = "block";
+        video.play();
+    }
+    
+    function derrotarUltimo(){
+        source.src = listaVideos[15];
         video.load();
         video.style.display = "block";
         video.play();

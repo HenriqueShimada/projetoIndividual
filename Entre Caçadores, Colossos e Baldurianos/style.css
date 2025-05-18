@@ -69,7 +69,7 @@ body {
     padding-right: 60px;
 }
 
-.homemLeao{
+.agradecimento .homemLeao{
     display: flex;
     flex-direction: row;
     text-align: center;
@@ -97,7 +97,7 @@ body {
 .bloodborne .fundoMascarado {
     position: absolute;
     inset: 0;
-    background-image: url("./imagens/bloodborne_inicial_esfumacado.png");
+    background-image: url("./imagens/bloodborne/bloodborne_inicial_esfumacado.png");
     background-size: cover;
     background-position: center;
     mask-image: linear-gradient(to right, transparent, black);
@@ -141,6 +141,9 @@ body {
 .descricaoJogo{
     font-size: 20px;
     color: #f0e6d2;
+}
+.bloodborne.fundoMascarado.container.descricaoJogo{
+    padding-left: 30%;
 }
 
 .container{
@@ -211,7 +214,7 @@ body {
 .bg3 .fundoMascarado {
     position: absolute;
     inset: 0;
-    background-image: url("./imagens/bg3_inicial_esfumacado.png");
+    background-image: url("./imagens/bg3/bg3_inicial_esfumacado.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -357,16 +360,128 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-bottom: 400px;
+    padding-bottom: 50px;
 }
 
 .derrotarColosso .simboloColosso img{
     height: 500px;
     filter: invert(1) drop-shadow(0 0 5px rgb(108, 213, 239));
     padding-bottom: 30px;
+    cursor: pointer;
 }
 .derrotarColosso .descricaoJogo{
     padding-bottom: 30px;
+    font-size: 35px;
+}
+
+.arteConceitual{
+    margin-bottom: 100px;
+}
+
+.arteConceitual .swiper {
+    height: 720px;
+    width: 70%;
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #f0e6d2;
+    font-family: Georgia;
+   
+}
+
+.login .container{
+    margin-top: 52px;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: flex-start;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)),
+    url(./imagens/bg3/bg3_login.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 620px;
+    width: 100%;
+    border-color: #f0e6d2;
+    border-width: 1px 0px 1px 0px;
+    border-style: solid;
+}
+.login .container .card-login{
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: center;
+    height: 50%;
+    width: 40%;
+    font-size: 25px;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around ;
+    align-items: center;
+    height: 100%;
+    font-size: 25px;
+}
+
+.formulario .campo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 35%;
+}
+
+.campo input{
+    border-radius: 5px;
+    height: 35px;
+    border-style: none none solid none;
+    border-color: #f0e6d2;
+    border-width: 1px;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(6px); 
+    font-family: Georgia;
+    color: #f0e6d2;
+    width: 250px;
+    outline: none;
+}
+
+.cadastro{
+      display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #f0e6d2;
+    font-family: Georgia;
+}
+
+.cadastro .container{
+    margin-top: 52px;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: flex-start;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)),
+    url(./imagens/bloodborne/bloodborne_cadastro.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 620px;
+    width: 100%;
+    border-color: #f0e6d2;
+    border-width: 1px 0px 1px 0px;
+    border-style: solid;
+}
+.cadastro .container .card-cadastro{
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: center;
+    height: 80%;
+    width: 40%;
+    font-size: 25px;
 }
 
 
