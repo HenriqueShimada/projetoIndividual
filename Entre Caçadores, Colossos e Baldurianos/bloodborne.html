@@ -1,15 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bloodborne</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    
-Bloodborne
+
+<body class="pgBloodborne">
 
 
+    <div class="navBloodborne">
+        <img src="./imagens/bloodborne/bloodborne_discernimento.png" alt="">
+    </div>
+
+    <div class="conteudo">
+
+        <div class="introBlood">
+            <div class="fundoMascarado4"></div>
+            <div class="fundoMascarado3"></div>
+            <div class="fundoMascarado2"></div>
+            <div class="fundoMascarado1"></div>
+
+            <div class="container">
+                <button class="botao" id="botaoAcao" onclick="acordar()">Acordar</button>
+                <input type="text" id="nomeJogador" placeholder="Digite seu nome..." >
+                <div id="div_legenda"></div>
+
+                <audio id="minister">
+                    <source src="./audios/Bloodborne - Opening Cutscene.mp3" type="audio/mp3">
+                </audio>
+                <audio id="minister2">
+                    <source src="./audios/Bloodborne - Opening Cutscene2.mp3" type="audio/mp3">
+                </audio>
+            </div>
+        </div>
+
+
+        <div class="boneca">
+            <div class="container">
+                <button class="botao" onclick="coversar()">Coversar</button>
+                <div id="div_legenda2"></div>
+            </div>
+        </div>
+
+        <div class="yharnam">
+
+
+
+        </div>
+        <div>
+
+        </div>
+
+
+    </div>
 
 </body>
+
 </html>
+
+<script>
+
+function acordar() {
+    const audio = document.getElementById("minister");
+    const div_legenda = document.getElementById("div_legenda");
+    const botao = document.getElementById("botaoAcao");
+    const nomeInput = document.getElementById("nomeJogador");
+
+    audio.play();
+    div_legenda.innerHTML = "Ah sim... Sangue-pálido";
+
+    setTimeout(() => {
+        document.querySelector('.fundoMascarado1').style.opacity = 1;
+    }, 500);
+
+    setTimeout(() => {
+        div_legenda.innerHTML = "";
+    }, 3500);
+
+    setTimeout(() => {
+        div_legenda.innerHTML = "Bem, você veio ao lugar certo.";
+    }, 7000);
+
+    setTimeout(() => {
+        div_legenda.innerHTML = "Yharnam é o lar do sacerdócio de sangue.";
+    }, 10600);
+
+    setTimeout(() => {
+        div_legenda.innerHTML = "Você só precisa desvendar seu mistério.";
+    }, 14000);
+
+    setTimeout(() => {
+        div_legenda.innerHTML = "";
+    }, 16800);
+
+    setTimeout(() => {
+        document.querySelector('.fundoMascarado1').style.opacity = 0;
+        document.querySelector('.fundoMascarado2').style.opacity = 1;
+    }, 17000);
+
+    setTimeout(() => {
+        div_legenda.innerHTML = "Mas por onde um estrangeiro como você começará?";
+    }, 18500);
+
+    setTimeout(() => {
+        div_legenda.innerHTML = "";
+    }, 22000);
+
+    setTimeout(() => {
+        div_legenda.innerHTML = "Claro, com um pouco de seu próprio sangue de Yharnam...";
+    }, 23800);
+
+    setTimeout(() => {
+        div_legenda.innerHTML = "";
+    }, 27000);
+
+    setTimeout(() => {
+        div_legenda.innerHTML = "Mas antes, você precisará de um contrato...";
+    }, 29500);
+
+    setTimeout(() => {
+        nomeInput.classList.add('show');
+        botao.innerText = "Assinar";
+        botao.onclick = assinar;  
+    }, 33500);
+}
+
+</script>

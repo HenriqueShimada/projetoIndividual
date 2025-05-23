@@ -450,7 +450,7 @@ body {
 }
 
 .cadastro{
-      display: flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -483,5 +483,177 @@ body {
     width: 40%;
     font-size: 25px;
 }
+.card-cadastro input{
+    width: 400px;
+}
+
+.formulario span{
+    font-size: 20px;
+}
+
+.formulario a{
+    text-decoration: none;
+    color: goldenrod;
+}
+
+
+.navBloodborne{
+    position: fixed;
+    display: flex;
+    justify-content:flex-start;
+    align-items: flex-end;
+    flex-direction: column;
+    background-image:url(./imagens/menu_cima.png);
+    background-size:cover;
+    height: 160px;
+    width: 100%;
+    background-position:top;
+    z-index: 2;
+    background-position: 500px;
+}
+
+.navBloodborne img{
+    display: flex;
+    height: 30px;
+    flex-direction: row;
+    margin-right: 60px;
+    margin-top: 60px;
+    filter: invert(1);
+}
+
+.introBlood {
+    position: relative;
+    height: 700px;
+    width: 100%;
+    display: flex;
+    color: aliceblue;
+ 
+}
+  
+.introBlood  .fundoMascarado1{
+    position: absolute;
+    inset: 0;
+    background-image: url(./imagens/bloodborne/bloodborne_minister3.jpg);
+    background-size: cover;
+    background-position: top;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 2s ease;
+    margin-top: 60px;
+}
+
+.introBlood .fundoMascarado2{
+    position: absolute;
+    inset: 0;
+    background-image: url(./imagens/bloodborne/bloodborne_minister.jpg);
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 2s ease;
+    margin-top: 60px;
+}
+
+.introBlood  .fundoMascarado3{
+    position: absolute;
+    inset: 0;
+    background-image: url(./imagens/bloodborne/bloodborne_minister4.jpg);
+    background-size: cover;
+    background-position: top;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 2s ease;
+    margin-top: 60px;
+}
+
+.introBlood .fundoMascarado4{
+    position: absolute;
+    inset: 0;
+    background-image: url(./imagens/bloodborne/bloodborne_minister2.png);
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 2s ease;
+    margin-top: 60px;
+}
+
+
+.introBlood .container{
+    z-index: 1;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-end;
+    align-items: center;
+    height: 100%;
+    z-index: 1;
+}
+
+.introBlood #div_legenda {
+    height: 40px;
+    font-size: 25px;
+    color: white;
+    text-shadow: 2px 2px 5px #000,
+    -2px -2px 5px #000,
+    -2px 2px 5px #000,
+    2px -2px 5px #000;
+}
+
+.introBlood #nomeJogador {
+    display: none; 
+    opacity: 0;
+    border-radius: 5px;
+    height: 35px;
+    border-style: none none solid none;
+    border-color: #f0e6d2;
+    border-width: 1px;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(6px); 
+    font-family: Georgia;
+    color: #f0e6d2;
+    width: 250px;
+    outline: none;
+}
+
+.introBlood #nomeJogador.show {
+    display: block;
+    opacity: 1;
+}
+
+
+
+.conteudo .boneca{
+    display: flex;
+    flex-direction: column;
+   
+    justify-content: flex-end;
+    z-index: 0;
+    align-items: center;
+    margin-top: 30px;
+  
+
+
+}
+
+.conteudo .boneca .container{
+    justify-content: flex-end;
+        background-image: url(./imagens/bloodborne/bloodborne_boneca.jpg);
+         width: 80%;
+    height: 600px;
+        background-size: cover;
+
+
+}
+
+.conteudo .boneca .container .botao{
+    margin-bottom: 40px;
+}
+
+
+
+
+
 
 
