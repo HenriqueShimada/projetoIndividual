@@ -24,7 +24,7 @@
             <div class="fundoMascarado1"></div>
 
             <div class="container">
-                <button class="botao" id="botaoAcao" onclick="acordar()">Acordar</button>
+                <button class="botao" id="botao" onclick="acordar()">Acordar</button>
                 <input type="text" id="nomeJogador" placeholder="Digite seu nome..." >
                 <div id="div_legenda"></div>
 
@@ -37,10 +37,22 @@
             </div>
         </div>
 
+           <div class="espaco"></div>
+
+        <div class="lobo">
+            <div class="fundoMascarado6"></div>
+            <div class="fundoMascarado5"></div>
+
+            <div class="container">
+                <button class="botao" onclick="atacar()">Atacar</button>
+            </div>
+
+        </div>
+
 
         <div class="boneca">
             <div class="container">
-                <button class="botao" onclick="coversar()">Coversar</button>
+                <button class="botao" onclick="conversar()">Coversar</button>
                 <div id="div_legenda2"></div>
             </div>
         </div>
@@ -64,10 +76,9 @@
 <script>
 
 function acordar() {
-    const audio = document.getElementById("minister");
-    const div_legenda = document.getElementById("div_legenda");
-    const botao = document.getElementById("botaoAcao");
-    const nomeInput = document.getElementById("nomeJogador");
+    var audio = document.getElementById("minister");
+    var botao = document.getElementById("botao");
+    var nomeInput = document.getElementById("nomeJogador");
 
     audio.play();
     div_legenda.innerHTML = "Ah sim... Sangue-pálido";
@@ -127,5 +138,21 @@ function acordar() {
         botao.onclick = assinar;  
     }, 33500);
 }
+
+function atacar(){
+     setTimeout(() => {
+        document.querySelector('.fundoMascarado5').style.opacity = 0;
+        document.querySelector('.fundoMascarado6').style.opacity = 1;
+    }, 2000);
+
+}
+
+function conversar(){
+    div_legenda2.innerHTML ="Ela não responde";
+    setTimeout(() => {
+        div_legenda2.innerHTML = "";
+    }, 3000);
+}
+
 
 </script>
