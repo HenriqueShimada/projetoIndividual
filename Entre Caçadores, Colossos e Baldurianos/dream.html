@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snho do caçador</title>
+    <title>Sonho do caçador</title>
     <link rel="stylesheet" href="style.css">
+    
 </head>
 
 <body class="pgBloodborne">
@@ -20,8 +21,13 @@
     <div class="conteudo">
 
         <div class="dream">
+            <div class="fundoMascarado"></div>
             <div class="container">
+                <p class="descricaoJogo">Um refúgio silencioso entre a vida e a morte. No Sonho do Caçador, o caçador repousa, aprimora suas habilidades
+                e se prepara para a próxima caçada. Um espaço onírico e sereno, onde o tempo parece não passar — mas que, no fim,
+                revela sua verdadeira e melancólica natureza.</p>
 
+                <button class="botao" onclick="tocarMusica()">Música</button>
             </div>
 
             <audio id="musicaSonho">
@@ -30,6 +36,14 @@
         </div>
 
         <div class="boneca">
+            <div class="container">
+                <button class="botao" onclick="conversar()">Coversar</button>
+                <div id="div_legenda2"></div>
+            </div>
+        </div>
+
+
+        <div class="gerhman">
             <div class="container">
                 <button class="botao" onclick="conversar()">Coversar</button>
                 <div id="div_legenda2"></div>
@@ -68,6 +82,10 @@
         }
     }
 
+    function tocarMusica(){
+        var musica = document.getElementById("musicaSonho");
+        musica.play();
+    }
 
     function conversar() {
 
