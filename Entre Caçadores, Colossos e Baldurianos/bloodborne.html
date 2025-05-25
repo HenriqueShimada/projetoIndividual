@@ -12,7 +12,10 @@
 
 
     <div class="navBloodborne">
-        <img src="./imagens/bloodborne/bloodborne_discernimento.png" alt="">
+        <div class="discernimento">
+            <div id="div_discernimento"></div>
+            <img src="./imagens/bloodborne/bloodborne_discernimento.png" alt="">
+        </div>
     </div>
 
     <div class="conteudo">
@@ -22,9 +25,10 @@
             <div class="fundoMascarado3"></div>
             <div class="fundoMascarado2"></div>
             <div class="fundoMascarado1"></div>
+            <div class="fundoMascarado10"></div>
 
             <div class="container">
-                <button class="botao" id="botao" onclick="acordar()">Acordar</button>
+                <button class="botao" id="botao">Acordar</button>
                 <input type="text" id="nomeJogador" placeholder="Digite seu nome..." >
                 <div id="div_legenda"></div>
 
@@ -47,20 +51,20 @@
                 <button class="botao" onclick="atacar()">Atacar</button>
             </div>
 
-        </div>
+            <audio id="morreu">
+                    <source src="./audios/bloodborne_morte.mp3" type="audio/mp3">
+                </audio>
 
-
-        <div class="boneca">
-            <div class="container">
-                <button class="botao" onclick="conversar()">Coversar</button>
-                <div id="div_legenda2"></div>
-            </div>
         </div>
 
         <div class="yharnam">
+            <div class="fundoMascarado9"></div>
+            <div class="fundoMascarado8"></div>
+            <div class="fundoMascarado7"></div>
 
-
-
+            <div class="container">
+                <button class="botao" onclick="atravessar()">Atravessar ponte</button>
+            </div>
         </div>
         <div>
 
@@ -75,6 +79,14 @@
 
 <script>
 
+   var discernimento = parseInt(localStorage.getItem('discernimento')) || 0;
+    div_discernimento. innerHTML= discernimento;
+
+        var temArma = parseInt(localStorage.getItem('temArma')) || 0;
+
+    var botao = document.getElementById("botao");
+    botao.onclick = acordar;
+
 function acordar() {
     var audio = document.getElementById("minister");
     var botao = document.getElementById("botao");
@@ -84,6 +96,7 @@ function acordar() {
     div_legenda.innerHTML = "Ah sim... Sangue-pálido";
 
     setTimeout(() => {
+        document.querySelector('.fundoMascarado10').style.opacity = 0;
         document.querySelector('.fundoMascarado1').style.opacity = 1;
     }, 500);
 
@@ -139,19 +152,82 @@ function acordar() {
     }, 33500);
 }
 
-function atacar(){
-     setTimeout(() => {
-        document.querySelector('.fundoMascarado5').style.opacity = 0;
-        document.querySelector('.fundoMascarado6').style.opacity = 1;
-    }, 2000);
+function assinar(){
+    var audio = document.getElementById("minister2");
+    var botao = document.getElementById("botao");
+
+    audio.play();
+    div_legenda.innerHTML = "Bom. Tudo assinado e selado.";
+
+    setTimeout(() => {
+        div_legenda.innerHTML = "";
+    }, 4500);
+
+    setTimeout(() => {
+        div_legenda.innerHTML = "Agora, vamos começar a transfusão. Ah, não se preocupe.";
+    }, 6000);
+
+    setTimeout(() => {
+        document.querySelector('.fundoMascarado2').style.opacity = 0;
+        document.querySelector('.fundoMascarado3').style.opacity = 1;
+    }, 8000);
+
+    setTimeout(() => {
+        div_legenda.innerHTML = "";
+    }, 12000);
+
+    setTimeout(() => {
+        div_legenda.innerHTML = "Aconteça o que acontecer... Talvez pareça um mero sonho ruim...";
+    }, 14000);
+
+    setTimeout(() => {
+        document.querySelector('.fundoMascarado3').style.opacity = 0;
+        document.querySelector('.fundoMascarado4').style.opacity = 1;
+    }, 15000);
+
+    setTimeout(() => {
+        div_legenda.innerHTML = "";
+        document.querySelector('.fundoMascarado4').style.opacity = 0;
+        document.querySelector('.fundoMascarado10').style.opacity = 1;
+    }, 20000);
+
 
 }
 
-function conversar(){
-    div_legenda2.innerHTML ="Ela não responde";
-    setTimeout(() => {
-        div_legenda2.innerHTML = "";
-    }, 3000);
+function atacar(){
+    var audio = document.getElementById("morreu");
+
+
+    if(temArma >= 1){
+        console.log('oiii')
+      
+    }
+
+    else{
+          setTimeout(() => {
+            document.querySelector('.fundoMascarado5').style.opacity = 0;
+            document.querySelector('.fundoMascarado6').style.opacity = 1;
+        }, 1000);
+
+        setTimeout(() => {
+            audio.play();
+        }, 1000);
+
+
+        setTimeout(() => {
+            window.location.href = "dream.html";
+        }, 7000);
+    }
+
+}
+function atravessar(){
+     if(discernimento == 1){
+        return
+    }
+
+    discernimento ++;
+    div_discernimento. innerHTML= discernimento;
+    localStorage.setItem('discernimento', discernimento);
 }
 
 

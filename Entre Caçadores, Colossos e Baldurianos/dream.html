@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snho do caçador</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="pgBloodborne">
+
+    <div class="navBloodborne">
+        <div class="discernimento">
+            <div id="div_discernimento"></div>
+            <img src="./imagens/bloodborne/bloodborne_discernimento.png" alt="">
+        </div>
+    </div>
+
+    <div class="conteudo">
+
+        <div class="dream">
+            <div class="container">
+
+            </div>
+
+            <audio id="musicaSonho">
+                <source src="./audios/Hunter's Dream.mp3" type="audio/mp3">
+            </audio>
+        </div>
+
+        <div class="boneca">
+            <div class="container">
+                <button class="botao" onclick="conversar()">Coversar</button>
+                <div id="div_legenda2"></div>
+            </div>
+        </div>
+
+        <div class="escolherArma">
+            <div class="container">
+                <div class="serra" onclick="pegarArma()"></div>
+                <div class="bengala" onclick="pegarArma()"></div>
+                <div class="machado" onclick="pegarArma()"></div>
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    var discernimento = parseInt(localStorage.getItem('discernimento')) || 0;
+    div_discernimento.innerHTML = discernimento;
+
+    var temArma = parseInt(localStorage.getItem('temArma')) || 0;
+
+    document.addEventListener("DOMContentLoaded", function () {
+        aparecerArma();
+    });
+
+    function aparecerArma() {
+        if (temArma > 0) {
+            document.querySelector('.escolherArma').style.display = 'none'; 
+        }
+    }
+
+
+    function conversar() {
+
+        if (discernimento > 0) {
+            div_legenda2.innerHTML = "oiiii";
+        }
+
+        else {
+            div_legenda2.innerHTML = "Ela não responde";
+            setTimeout(() => {
+                div_legenda2.innerHTML = "";
+            }, 3000);
+        }
+    }
+
+    function pegarArma() {
+        if (temArma >= 1) {
+            return
+        }
+
+        temArma++;
+        localStorage.setItem('temArma', temArma);
+        aparecerArma();
+    }
+
+
+</script>
