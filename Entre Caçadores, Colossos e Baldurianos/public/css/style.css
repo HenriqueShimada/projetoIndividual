@@ -7,7 +7,7 @@ body {
     margin: 0;
     padding: 0;
     /* background: linear-gradient(to bottom, #111 40%, #1c1c1c 100%);     */
-    background-image: url(./imagens/fumaca_fundo.png);
+    background-image: url(../assets/imagens/fumaca_fundo.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed; 
@@ -28,7 +28,7 @@ body {
     justify-content:flex-start;
     align-items: center;
     flex-direction: column;
-    background-image:url(./imagens/menu_cima.png);
+    background-image:url(../assets/imagens/menu_cima.png);
     background-position: 500px 230px;
     background-size: cover;
     color:goldenrod;  
@@ -97,7 +97,7 @@ body {
 .bloodborne .fundoMascarado {
     position: absolute;
     inset: 0;
-    background-image: url("./imagens/bloodborne/bloodborne_inicial_esfumacado.png");
+    background-image: url("../assets/imagens/bloodborne/bloodborne_inicial_esfumacado.png");
     background-size: cover;
     background-position: center;
     mask-image: linear-gradient(to right, transparent, black);
@@ -182,7 +182,7 @@ body {
 .colossus .fundoMascarado {
     position: absolute;
     inset: 0;
-    background-image: url("./imagens/sotc/sotc_inicial_esfumacado.png");
+    background-image: url("../assets/imagens/sotc/sotc_inicial_esfumacado.png");
     background-size: cover;
     background-position: center;
     mask-image: linear-gradient(to left, transparent, black);
@@ -214,7 +214,7 @@ body {
 .bg3 .fundoMascarado {
     position: absolute;
     inset: 0;
-    background-image: url("./imagens/bg3/bg3_inicial_esfumacado.png");
+    background-image: url("../assets/imagens/bg3/bg3_inicial_esfumacado.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -245,7 +245,7 @@ body {
 .introColossus  .fundoMascarado1{
     position: absolute;
     inset: 0;
-    background-image: url(./imagens/sotc/mono_morta_esfumacado.png);
+    background-image: url(../assets/imagens/sotc/mono_morta_esfumacado.png);
     background-size: cover;
     background-position: center;
     z-index: 0;
@@ -256,7 +256,7 @@ body {
 .introColossus .fundoMascarado2{
     position: absolute;
     inset: 0;
-    background-image: url(./imagens/sotc/espada_luz_esfumacado.png);
+    background-image: url(../assets/imagens/sotc/espada_luz_esfumacado.png);
     background-size: cover;
     background-position: center;
     z-index: 0;
@@ -267,7 +267,7 @@ body {
 .introColossus  .fundoMascarado3{
     position: absolute;
     inset: 0;
-    background-image: url(./imagens/sotc/colosso_inicial_esfumacado.png);
+    background-image: url(../assets/imagens/sotc/colosso_inicial_esfumacado.png);
     background-size: cover;
     background-position: top;
     z-index: 0;
@@ -400,7 +400,7 @@ body {
     align-items:center;
     justify-content: flex-start;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)),
-    url(./imagens/bg3/bg3_login.jpg);
+    url(../assets/imagens/bg3/bg3_login.jpg);
     background-size: cover;
     background-position: center;
     height: 620px;
@@ -465,7 +465,7 @@ body {
     align-items:center;
     justify-content: flex-start;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)),
-    url(./imagens/bloodborne/bloodborne_cadastro.jpg);
+    url(../assets/imagens/bloodborne/bloodborne_cadastro.jpg);
     background-size: cover;
     background-position: center;
     height: 620px;
@@ -503,7 +503,7 @@ body {
     justify-content:flex-end;
     align-items: flex-start;
     flex-direction: row;
-    background-image:url(./imagens/menu_cima.png);
+    background-image:url(../assets/imagens/menu_cima.png);
     background-size:cover;
     height: 160px;
     width: 100%;
@@ -547,7 +547,7 @@ body {
 .introBlood  .fundoMascarado1{
     position: absolute;
     inset: 0;
-    background-image: url(./imagens/bloodborne/bloodborne_minister3.jpg);
+    background-image: url(../assets/imagens/bloodborne/bloodborne_minister3.jpg);
     background-size: cover;
     background-position: top;
     z-index: 0;
@@ -559,7 +559,7 @@ body {
 .introBlood .fundoMascarado2{
     position: absolute;
     inset: 0;
-    background-image: url(./imagens/bloodborne/bloodborne_minister.jpg);
+    background-image: url(../assets/imagens/bloodborne/bloodborne_minister.jpg);
     background-size: cover;
     background-position: center;
     z-index: 0;
@@ -571,7 +571,7 @@ body {
 .introBlood  .fundoMascarado3{
     position: absolute;
     inset: 0;
-    background-image: url(./imagens/bloodborne/bloodborne_minister4.jpg);
+    background-image: url(../assets/imagens/bloodborne/bloodborne_minister4.jpg);
     background-size: cover;
     background-position: top;
     z-index: 0;
@@ -583,7 +583,7 @@ body {
 .introBlood .fundoMascarado4{
     position: absolute;
     inset: 0;
-    background-image: url(./imagens/bloodborne/bloodborne_minister2.png);
+    background-image: url(../assets/imagens/bloodborne/bloodborne_minister2.png);
     background-size: cover;
     background-position: center;
     z-index: 0;
@@ -595,7 +595,7 @@ body {
 .introBlood .fundoMascarado10{
     position: absolute;
     inset: 0;
-    background-image: url(./imagens/bloodborne/000000.png);
+    background-image: url(../assets/imagens/bloodborne/000000.png);
     background-size: cover;
     background-position: center;
     z-index: 0;
@@ -659,7 +659,7 @@ body {
 .lobo .fundoMascarado5{
     position: absolute;
     inset: 0;
-    background-image: url(./imagens/bloodborne/bloodborne_lobo.png
+    background-image: url(../assets/imagens/bloodborne/bloodborne_lobo.png
     );
     background-size: cover;
     background-position: top;
@@ -672,7 +672,7 @@ body {
 .lobo .fundoMascarado6{
     position: absolute;
     inset: 0;
-    background-image: url(./imagens/bloodborne/bloodborne_morreu.jpg
+    background-image: url(../assets/imagens/bloodborne/bloodborne_morreu.jpg
     );
     background-size: cover;
     background-position: top;
@@ -685,7 +685,7 @@ body {
 .lobo .fundoMascarado11{
     position: absolute;
     inset: 0;
-    background-image: url(./imagens/bloodborne/bloodborne_inicial.jpg);
+    background-image: url(../assets/imagens/bloodborne/bloodborne_inicial.jpg);
     background-size: cover;
     background-position: center;
     z-index: 0;
@@ -721,7 +721,7 @@ body {
 .conteudo .dream .fundoMascarado {
     position: absolute;
     inset: 0;
-    background-image: url(./imagens/bloodborne/bloodborne_sonho_do_cacador.jpg);
+    background-image: url(../assets/imagens/bloodborne/bloodborne_sonho_do_cacador.jpg);
     background-size: cover;
     background-position: center;
     mask-image: linear-gradient(to right, transparent, black);
@@ -745,7 +745,7 @@ body {
 
 .conteudo .boneca .container{
     justify-content: flex-end;
-    background-image: url(./imagens/bloodborne/bloodborne_boneca.jpg);
+    background-image: url(../assets/imagens/bloodborne/bloodborne_boneca.jpg);
     width: 80%;
     height: 600px;
     background-size: cover;
@@ -775,21 +775,21 @@ body {
 }
 
 .machado {
-  background-image: url(./imagens/bloodborne/bloodborne_machado.png);
+  background-image: url(../assets/imagens/bloodborne/bloodborne_machado.png);
 }
 
 .serra {
-  background-image: url(./imagens/bloodborne/bloodborne_serra.png);
+  background-image: url(../assets/imagens/bloodborne/bloodborne_serra.png);
 }
 
 .bengala {
-  background-image: url(./imagens/bloodborne/bloodborne_bengala.png);
+  background-image: url(../assets/imagens/bloodborne/bloodborne_bengala.png);
 }
 
 .conteudo .yharnam .fundoMascarado {
     position: absolute;
     inset: 0;
-    background-image: url(./imagens/bloodborne/bloodborne_yharnam.png);
+    background-image: url(../assets/imagens/bloodborne/bloodborne_yharnam.png);
     background-size: cover;
     background-position: center;
     mask-image: linear-gradient(to right, transparent, black);
