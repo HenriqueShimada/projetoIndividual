@@ -786,7 +786,16 @@ body {
   background-image: url(./imagens/bloodborne/bloodborne_bengala.png);
 }
 
-
+.conteudo .yharnam .fundoMascarado {
+    position: absolute;
+    inset: 0;
+    background-image: url(./imagens/bloodborne/bloodborne_yharnam.png);
+    background-size: cover;
+    background-position: center;
+    mask-image: linear-gradient(to right, transparent, black);
+    -webkit-mask-image: linear-gradient(to right, transparent, black);
+    z-index: 0;
+}
 
 
 
