@@ -152,8 +152,8 @@ body {
     z-index: 1;
     position: relative;
     display: flex;
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: 80px;
+    margin-right: 80px;
     flex-direction: column;
     width: 50%;
     justify-content: space-around;
@@ -836,14 +836,36 @@ body {
     z-index: 0;
 }
 
+
+
+.indexBloodborne .nav h1 {
+    color: aliceblue;
+    font-family: fleshandblood;
+    font-size: 39px;
+}
+
+.indexBloodborne .nav .navegacao{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+
+}
+
+.indexBloodborne .nav .navegacao a{
+    text-decoration: none;
+    color: #f0e6d2;
+    margin: 0px 20px;
+}
+
 .areas {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
+    font-size: 28px;
 }
 
-.areas .container {
+.areas .divisao {
     display: flex;
     justify-content: space-around;
     margin-top: 30px;
@@ -860,6 +882,10 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
     transition: transform 0.3s;
+    font-size: 15px;
+}
+.area .container{
+    margin-left: 10px;
 }
 
 .area.central {
@@ -888,7 +914,7 @@ body {
 }
 
 .area.academia {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)),
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)),
         url(../assets/imagens/bloodborne/bloodborne_byrgenwerth.jpg);
     background-size: cover;
     background-position: bottom;
@@ -918,3 +944,160 @@ body {
 .area:hover {
     transform: scale(1.05);
 }
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 680px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-size: 35px;
+}
+
+.videoFundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.5);
+}
+
+.contexto {
+    width: 100%;
+    height: 550px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-size: 28px;
+}
+
+.contexto .container {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+
+.contexto .container img {
+    width: 41vw;
+    margin-left: 80px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s;
+}
+
+.contexto .container img:hover {
+    transform: scale(1.05);
+}
+
+.contexto .container p {
+    margin: 0px 80px 0px 80px;
+}
+
+.arte {
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start; 
+    justify-content: center; 
+    flex-direction: column;
+    font-size: 28px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url(../assets/imagens/bloodborne/bloodborne-central-yharnam-tunnel.jpg);
+    background-size: cover;
+    padding-top: 50px;
+    background-position: bottom;
+}
+
+.arte h2{
+    width: 100%;
+    text-align: center;
+}
+
+.mecanica {
+    width: 100%;
+    height: 580;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-size: 28px;
+}
+
+.mecanica .container{
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-around;
+}
+
+.mecanica .container img{
+    width: 38vw;
+    margin-left: 80px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s;
+    margin: 30px 0px 30px;
+}
+
+.mecanica .container img:hover {
+    transform: scale(1.05);
+}
+
+.mecanica .container p{
+    margin: 0px 80px 0px 80px;
+}
+
+.horror {
+    width: 100%;
+    height: 650px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start; 
+    justify-content: center; 
+    flex-direction: column;
+    font-size: 28px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url(../assets/imagens/bloodborne/bloodborne-moon-presence.jpg);
+    background-size: cover;
+    padding-top: 50px;
+    background-position: top;
+}
+
+.horror h2{
+    width: 100%;
+    text-align: center;
+}
+
+.cacador {
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start; 
+    justify-content: center; 
+    flex-direction: column;
+    font-size: 28px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url(../assets/imagens/bloodborne/bloodborne_inicial.jpg);
+    background-size: cover;
+    padding-top: 20px;
+    margin-top: 30px;
+    background-position: bottom;
+}
+
+.cacador h2{
+    width: 100%;
+    text-align: center;
+}
+
+
