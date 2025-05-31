@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0px;
     box-sizing: border-box;
 }
@@ -10,38 +10,39 @@ body {
     background-image: url(../assets/imagens/fumaca_fundo.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed; 
+    background-attachment: fixed;
     background-position: center;
-    color: white;
+    color: #f0e6d2;
     font-family: Georgia;
 }
 
-.conteudo{
+.conteudo {
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
 
-.nav{
+.nav {
     position: fixed;
     display: flex;
-    justify-content:flex-start;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    background-image:url(../assets/imagens/menu_cima.png);
+    background-image: url(../assets/imagens/menu_cima.png);
     background-position: 500px 230px;
     background-size: cover;
-    color:goldenrod;  
+    color: goldenrod;
     height: 170px;
     width: 100%;
     background-position: center;
     z-index: 2;
 }
-.nav h1{
+
+.nav h1 {
     margin-top: 20px;
 }
 
-.nav hr{
+.nav hr {
     width: 900px;
 }
 
@@ -65,11 +66,11 @@ body {
     font-size: 18px;
     line-height: 1.6;
     margin: 0 auto 20px auto;
-    text-align:start;
+    text-align: start;
     padding-right: 60px;
 }
 
-.agradecimento .homemLeao{
+.agradecimento .homemLeao {
     display: flex;
     flex-direction: row;
     text-align: center;
@@ -77,7 +78,7 @@ body {
     justify-content: flex-start;
 }
 
-.homemLeao img{
+.homemLeao img {
     margin-left: 150px;
     height: 450px;
 }
@@ -88,12 +89,12 @@ body {
     height: 750px;
     display: flex;
     align-items: flex-start;
-    justify-content:flex-start;
+    justify-content: flex-start;
     color: aliceblue;
     margin-top: 220px;
 
 }
-  
+
 .bloodborne .fundoMascarado {
     position: absolute;
     inset: 0;
@@ -112,12 +113,12 @@ body {
     border: none;
     color: #cdbd9c;
     font-size: 24px;
-    font-family:Georgia; 
+    font-family: Georgia;
     cursor: pointer;
     transition: color 0.3s ease;
-    text-shadow: 0 0 2px #000; 
+    text-shadow: 0 0 2px #000;
 }
-  
+
 .botao::after {
     content: '';
     position: absolute;
@@ -129,24 +130,25 @@ body {
     transition: opacity 0.3s ease;
     z-index: -1;
 }
-  
+
 .botao:hover {
     color: #cdb27c;
 }
-  
+
 .botao:hover::after {
     opacity: 1;
 }
 
-.descricaoJogo{
+.descricaoJogo {
     font-size: 20px;
     color: #f0e6d2;
 }
-.bloodborne.fundoMascarado.container.descricaoJogo{
+
+.bloodborne.fundoMascarado.container.descricaoJogo {
     padding-left: 30%;
 }
 
-.container{
+.container {
     z-index: 1;
     position: relative;
     display: flex;
@@ -160,7 +162,7 @@ body {
     z-index: 1;
 }
 
-.bloodborne .nomeJogo{
+.bloodborne .nomeJogo {
     display: flex;
     font-family: Fleshandblood;
     font-size: 58px;
@@ -174,11 +176,11 @@ body {
     height: 750px;
     display: flex;
     align-items: center;
-    justify-content:flex-end;
+    justify-content: flex-end;
     color: aliceblue;
     margin: 30px;
 }
-  
+
 .colossus .fundoMascarado {
     position: absolute;
     inset: 0;
@@ -193,7 +195,7 @@ body {
 
 
 
-.colossus .nomeJogo{
+.colossus .nomeJogo {
     display: flex;
     flex-direction: column;
     font-family: Caslon Antique;
@@ -201,16 +203,17 @@ body {
     align-items: center;
 
 }
-.colossus .nomeJogo span{
+
+.colossus .nomeJogo span {
     font-size: 30px;
- 
+
 }
 
-.nomeJogopng{
+.nomeJogopng {
     height: 150px;
 }
 
-  
+
 .bg3 .fundoMascarado {
     position: absolute;
     inset: 0;
@@ -228,7 +231,7 @@ body {
     height: 750px;
     display: flex;
     align-items: flex-start;
-    justify-content:flex-start;
+    justify-content: flex-start;
     color: aliceblue;
     margin: 30px;
     margin: 30px
@@ -241,8 +244,8 @@ body {
     display: flex;
     color: aliceblue;
 }
-  
-.introColossus  .fundoMascarado1{
+
+.introColossus .fundoMascarado1 {
     position: absolute;
     inset: 0;
     background-image: url(../assets/imagens/sotc/mono_morta_esfumacado.png);
@@ -253,7 +256,7 @@ body {
     transition: opacity 2s ease;
 }
 
-.introColossus .fundoMascarado2{
+.introColossus .fundoMascarado2 {
     position: absolute;
     inset: 0;
     background-image: url(../assets/imagens/sotc/espada_luz_esfumacado.png);
@@ -264,7 +267,7 @@ body {
     transition: opacity 2s ease;
 }
 
-.introColossus  .fundoMascarado3{
+.introColossus .fundoMascarado3 {
     position: absolute;
     inset: 0;
     background-image: url(../assets/imagens/sotc/colosso_inicial_esfumacado.png);
@@ -275,13 +278,13 @@ body {
     transition: opacity 2s ease;
 }
 
-.introColossus .container{
+.introColossus .container {
     z-index: 1;
     width: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content:flex-end;
+    justify-content: flex-end;
     align-items: center;
     height: 100%;
     z-index: 1;
@@ -293,12 +296,12 @@ body {
     font-size: 25px;
     color: white;
     text-shadow: 2px 2px 5px #000,
-    -2px -2px 5px #000,
-    -2px 2px 5px #000,
-    2px -2px 5px #000;
+        -2px -2px 5px #000,
+        -2px 2px 5px #000,
+        2px -2px 5px #000;
 }
 
-.jornadaColosso{
+.jornadaColosso {
     color: #f0e6d2;
     display: flex;
     justify-content: center;
@@ -311,7 +314,7 @@ body {
 
 }
 
-.jornadaColosso p{
+.jornadaColosso p {
     padding: 40px;
     padding-right: 50px;
     margin-left: 50px;
@@ -348,14 +351,15 @@ body {
 .swiper-slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover;
 }
 
-.swiper .swiper-button-prev, .swiper .swiper-button-next{
+.swiper .swiper-button-prev,
+.swiper .swiper-button-next {
     color: goldenrod;
 }
 
-.derrotarColosso{
+.derrotarColosso {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -363,18 +367,19 @@ body {
     padding-bottom: 50px;
 }
 
-.derrotarColosso .simboloColosso img{
+.derrotarColosso .simboloColosso img {
     height: 500px;
     filter: invert(1) drop-shadow(0 0 5px rgb(108, 213, 239));
     padding-bottom: 30px;
     cursor: pointer;
 }
-.derrotarColosso .descricaoJogo{
+
+.derrotarColosso .descricaoJogo {
     padding-bottom: 30px;
     font-size: 35px;
 }
 
-.arteConceitual{
+.arteConceitual {
     margin-bottom: 100px;
 }
 
@@ -383,24 +388,24 @@ body {
     width: 70%;
 }
 
-.login{
+.login {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: #f0e6d2;
     font-family: Georgia;
-   
+
 }
 
-.login .container{
+.login .container {
     margin-top: 52px;
     display: flex;
     flex-direction: row;
-    align-items:center;
+    align-items: center;
     justify-content: flex-start;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)),
-    url(../assets/imagens/bg3/bg3_login.jpg);
+        url(../assets/imagens/bg3/bg3_login.jpg);
     background-size: cover;
     background-position: center;
     height: 620px;
@@ -409,47 +414,48 @@ body {
     border-width: 1px 0px 1px 0px;
     border-style: solid;
 }
-.login .container .card-login{
+
+.login .container .card-login {
     display: flex;
     flex-direction: column;
-    justify-content:flex-start;
+    justify-content: flex-start;
     align-items: center;
     height: 50%;
     width: 40%;
     font-size: 25px;
 }
 
-.formulario{
+.formulario {
     display: flex;
     flex-direction: column;
-    justify-content: space-around ;
+    justify-content: space-around;
     align-items: center;
     height: 100%;
     font-size: 25px;
 }
 
-.formulario .campo{
+.formulario .campo {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     height: 35%;
 }
 
-.campo input{
+.campo input {
     border-radius: 5px;
     height: 35px;
     border-style: none none solid none;
     border-color: #f0e6d2;
     border-width: 1px;
     background-color: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(6px); 
+    backdrop-filter: blur(6px);
     font-family: Georgia;
     color: #f0e6d2;
     width: 250px;
     outline: none;
 }
 
-.cadastro{
+.cadastro {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -458,14 +464,14 @@ body {
     font-family: Georgia;
 }
 
-.cadastro .container{
+.cadastro .container {
     margin-top: 52px;
     display: flex;
     flex-direction: row;
-    align-items:center;
+    align-items: center;
     justify-content: flex-start;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)),
-    url(../assets/imagens/bloodborne/bloodborne_cadastro.jpg);
+        url(../assets/imagens/bloodborne/bloodborne_cadastro.jpg);
     background-size: cover;
     background-position: center;
     height: 620px;
@@ -474,50 +480,52 @@ body {
     border-width: 1px 0px 1px 0px;
     border-style: solid;
 }
-.cadastro .container .card-cadastro{
+
+.cadastro .container .card-cadastro {
     display: flex;
     flex-direction: column;
-    justify-content:flex-start;
+    justify-content: flex-start;
     align-items: center;
     height: 80%;
     width: 40%;
     font-size: 25px;
 }
-.card-cadastro input{
+
+.card-cadastro input {
     width: 400px;
 }
 
-.formulario span{
+.formulario span {
     font-size: 20px;
 }
 
-.formulario a{
+.formulario a {
     text-decoration: none;
     color: goldenrod;
 }
 
 
-.navBloodborne{
+.navBloodborne {
     position: fixed;
     display: flex;
-    justify-content:flex-end;
+    justify-content: flex-end;
     align-items: flex-start;
     flex-direction: row;
-    background-image:url(../assets/imagens/menu_cima.png);
-    background-size:cover;
+    background-image: url(../assets/imagens/menu_cima.png);
+    background-size: cover;
     height: 160px;
     width: 100%;
-    background-position:top;
+    background-position: top;
     z-index: 2;
     background-position: 500px;
 }
 
-.discernimento{
+.discernimento {
     display: flex;
     flex-direction: row;
 }
 
-#div_discernimento{
+#div_discernimento {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -526,7 +534,7 @@ body {
     margin-right: 15px;
 }
 
-.navBloodborne img{
+.navBloodborne img {
     display: flex;
     height: 30px;
     flex-direction: row;
@@ -541,10 +549,10 @@ body {
     width: 100%;
     display: flex;
     color: aliceblue;
- 
+
 }
-  
-.introBlood  .fundoMascarado1{
+
+.introBlood .fundoMascarado1 {
     position: absolute;
     inset: 0;
     background-image: url(../assets/imagens/bloodborne/bloodborne_minister3.jpg);
@@ -556,7 +564,7 @@ body {
     margin-top: 60px;
 }
 
-.introBlood .fundoMascarado2{
+.introBlood .fundoMascarado2 {
     position: absolute;
     inset: 0;
     background-image: url(../assets/imagens/bloodborne/bloodborne_minister.jpg);
@@ -568,7 +576,7 @@ body {
     margin-top: 60px;
 }
 
-.introBlood  .fundoMascarado3{
+.introBlood .fundoMascarado3 {
     position: absolute;
     inset: 0;
     background-image: url(../assets/imagens/bloodborne/bloodborne_minister4.jpg);
@@ -580,7 +588,7 @@ body {
     margin-top: 60px;
 }
 
-.introBlood .fundoMascarado4{
+.introBlood .fundoMascarado4 {
     position: absolute;
     inset: 0;
     background-image: url(../assets/imagens/bloodborne/bloodborne_minister2.png);
@@ -592,7 +600,7 @@ body {
     margin-top: 60px;
 }
 
-.introBlood .fundoMascarado10{
+.introBlood .fundoMascarado10 {
     position: absolute;
     inset: 0;
     background-image: url(../assets/imagens/bloodborne/000000.png);
@@ -605,13 +613,13 @@ body {
 }
 
 
-.introBlood .container{
+.introBlood .container {
     z-index: 1;
     width: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content:flex-end;
+    justify-content: flex-end;
     align-items: center;
     height: 100%;
     z-index: 1;
@@ -622,13 +630,13 @@ body {
     font-size: 25px;
     color: white;
     text-shadow: 2px 2px 5px #000,
-    -2px -2px 5px #000,
-    -2px 2px 5px #000,
-    2px -2px 5px #000;
+        -2px -2px 5px #000,
+        -2px 2px 5px #000,
+        2px -2px 5px #000;
 }
 
 .introBlood #nomeJogador {
-    display: none; 
+    display: none;
     opacity: 0;
     border-radius: 5px;
     height: 35px;
@@ -636,7 +644,7 @@ body {
     border-color: #f0e6d2;
     border-width: 1px;
     background-color: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(6px); 
+    backdrop-filter: blur(6px);
     font-family: Georgia;
     color: #f0e6d2;
     width: 250px;
@@ -648,7 +656,7 @@ body {
     opacity: 1;
 }
 
-.lobo{  
+.lobo {
     position: relative;
     height: 700px;
     width: 100%;
@@ -656,11 +664,11 @@ body {
     color: aliceblue;
 }
 
-.lobo .fundoMascarado5{
+.lobo .fundoMascarado5 {
     position: absolute;
     inset: 0;
     background-image: url(../assets/imagens/bloodborne/bloodborne_lobo.png
-    );
+);
     background-size: cover;
     background-position: top;
     z-index: 0;
@@ -669,11 +677,11 @@ body {
     margin-top: 60px;
 }
 
-.lobo .fundoMascarado6{
+.lobo .fundoMascarado6 {
     position: absolute;
     inset: 0;
     background-image: url(../assets/imagens/bloodborne/bloodborne_morreu.jpg
-    );
+);
     background-size: cover;
     background-position: top;
     z-index: 0;
@@ -682,7 +690,7 @@ body {
     margin-top: 60px;
 }
 
-.lobo .fundoMascarado11{
+.lobo .fundoMascarado11 {
     position: absolute;
     inset: 0;
     background-image: url(../assets/imagens/bloodborne/bloodborne_inicial.jpg);
@@ -694,24 +702,24 @@ body {
     margin-top: 60px;
 }
 
-.lobo .container{
+.lobo .container {
     z-index: 1;
     width: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content:flex-end;
+    justify-content: flex-end;
     align-items: center;
     height: 100%;
     z-index: 1;
 }
 
-.conteudo .dream{
+.conteudo .dream {
     position: relative;
     height: 750px;
     display: flex;
     align-items: flex-start;
-    justify-content:flex-start;
+    justify-content: flex-start;
     color: aliceblue;
 
 }
@@ -729,12 +737,12 @@ body {
     z-index: 0;
 }
 
-.conteudo .dream .container{
+.conteudo .dream .container {
     margin-left: 100px;
 }
 
 
-.conteudo .boneca{
+.conteudo .boneca {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -743,7 +751,7 @@ body {
     margin-top: 30px;
 }
 
-.conteudo .boneca .container{
+.conteudo .boneca .container {
     justify-content: flex-end;
     background-image: url(../assets/imagens/bloodborne/bloodborne_boneca.jpg);
     width: 80%;
@@ -751,39 +759,39 @@ body {
     background-size: cover;
 }
 
-.conteudo .boneca .container .botao{
+.conteudo .boneca .container .botao {
     margin-bottom: 40px;
 }
 
 
 .escolherArma .container {
-  display: flex;
-  justify-content: space-between;
-  width: 80%;
-  height: 600px;
-  flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    height: 600px;
+    flex-direction: row;
 }
 
 .escolherArma .container div {
-  height: 500px;
-  width: 500px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  cursor: pointer;
-  margin: 10px;
+    height: 500px;
+    width: 500px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    cursor: pointer;
+    margin: 10px;
 }
 
 .machado {
-  background-image: url(../assets/imagens/bloodborne/bloodborne_machado.png);
+    background-image: url(../assets/imagens/bloodborne/bloodborne_machado.png);
 }
 
 .serra {
-  background-image: url(../assets/imagens/bloodborne/bloodborne_serra.png);
+    background-image: url(../assets/imagens/bloodborne/bloodborne_serra.png);
 }
 
 .bengala {
-  background-image: url(../assets/imagens/bloodborne/bloodborne_bengala.png);
+    background-image: url(../assets/imagens/bloodborne/bloodborne_bengala.png);
 }
 
 .conteudo .yharnam .fundoMascarado {
@@ -797,6 +805,116 @@ body {
     z-index: 0;
 }
 
+.conteudo .yharnam {
+    position: relative;
+    height: 750px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    z-index: 1;
+
+}
+
+.conteudo .janela {
+    position: relative;
+    height: 750px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    z-index: 1;
+
+}
+
+.conteudo .janela .fundoMascarado1 {
+    position: absolute;
+    inset: 0;
+    background-image: url(../assets/imagens/bloodborne/bloodborne_janela.jpg);
+    background-size: cover;
+    background-position: center;
+    mask-image: linear-gradient(to right, transparent, black);
+    -webkit-mask-image: linear-gradient(to right, transparent, black);
+    z-index: 0;
+}
+
+.areas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.areas .container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    flex-direction: row;
+    width: 95%;
+}
+
+.area {
+    width: 47%;
+    height: 45vh;
+    border: 1px solid #333;
+    padding: 15px;
+    color: #eee;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s;
+}
+
+.area.central {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)),
+        url(../assets/imagens/bloodborne/bloodborne_yharnam.png);
+    background-size: cover;
+}
+
+.area.sonho {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)),
+        url(../assets/imagens/bloodborne/bloodborne_sonho_do_cacador.jpg);
+    background-size: cover;
+}
+
+.area.antiga {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)),
+        url(../assets/imagens/bloodborne/bloodborne_antiga.png);
+    background-size: cover;
+    background-position: bottom;
+}
+
+.area.catedral {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)),
+        url(../assets/imagens/bloodborne/bloodborne_catedral.png);
+    background-size: cover;
+}
+
+.area.academia {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)),
+        url(../assets/imagens/bloodborne/bloodborne_byrgenwerth.jpg);
+    background-size: cover;
+    background-position: bottom;
+}
+
+.area.mensis {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)),
+        url(../assets/imagens/bloodborne/bloodborne_mensis.jpg);
+    background-size: cover;
+}
+
+.area.pesadelo {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)),
+        url(../assets/imagens/bloodborne/bloodborne_pesadelo.png);
+    background-size: cover;
+    background-position: bottom;
+}
+
+.area.yahargul {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)),
+        url(../assets/imagens/bloodborne/bloodborne_yahar\'gul.png);
+    background-size: cover;
+    background-position: bottom;
+}
 
 
-
+.area:hover {
+    transform: scale(1.05);
+}
