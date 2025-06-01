@@ -863,6 +863,7 @@ body {
     align-items: center;
     width: 100%;
     font-size: 28px;
+    margin-top: 40px;
 }
 
 .areas .divisao {
@@ -878,7 +879,6 @@ body {
     height: 45vh;
     border: 1px solid #333;
     padding: 15px;
-    color: #eee;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
     transition: transform 0.3s;
@@ -979,6 +979,7 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     font-size: 28px;
+    margin-top: 40px;
 }
 
 .contexto .container {
@@ -1034,6 +1035,7 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     font-size: 28px;
+    margin-top: 40px;
 }
 
 .mecanica .container{
