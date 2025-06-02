@@ -1102,4 +1102,60 @@ body {
     text-align: center;
 }
 
+.simulacao {
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start; 
+    justify-content: center; 
+    flex-direction: column;
+    font-size: 28px;
+    background-size: cover;
+    padding-top: 20px;
+    margin-top: 30px;
+    background-position: bottom;
+}
+
+.simulacao h2{
+    width: 100%;
+    text-align: center;
+}
+
+.clinica {
+    width: 100%;
+    height: 580;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-size: 28px;
+    margin-top: 40px;
+}
+
+.clinica .container{
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-around;
+}
+
+.clinica .container img{
+    width: 38vw;
+    margin-left: 80px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s;
+    margin: 30px 0px 30px;
+}
+
+.clinica .container img:hover {
+    transform: scale(1.05);
+}
+
+.clinica .container p{
+    margin: 0px 80px 0px 80px;
+}
+
 
