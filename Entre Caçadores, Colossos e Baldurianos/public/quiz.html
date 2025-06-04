@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="quiz">
+
+        <h1>Quiz</h1>
+
+        <div class="container">
+            <h2 id="pergunta">pergunta</h2>
+
+            <div class="respostas">
+                <button class="btn">1</button>
+                <button class="btn">2</button>
+                <button class="btn">3</button>
+                <button class="btn">4</button>
+            </div>
+
+            <button id="proximo">Próxima pergunta</button>
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+
+
+    const perguntas = [
+        {
+            pergunta: "Quem é o primeiro boss obrigatório de Bloodborne?",
+            respostas: [
+                { id: 1, texto: "Father Gascoigne", acerto: true },
+                { id: 2, texto: "Cleric Beast", acerto: false },
+                { id: 3, texto: "Vicar Amelia", acerto: false },
+                { id: 4, texto: "Blood-starved Beast", acerto: false }
+            ]
+        },
+        {
+            pergunta: "Quem é a responsável por ajudar o caçador na Sonho do Caçador?",
+            respostas: [
+                { id: 1, texto: "Gehrman", acerto: false },
+                { id: 2, texto: "Eileen the Crow", acerto: false },
+                { id: 3, texto: "The Doll", acerto: true },
+                { id: 4, texto: "Solaire", acerto: false }
+            ]
+        },
+        {
+            pergunta: "Qual é o nome da escola que buscava ascender à divindade através de olhos internos?",
+            respostas: [
+                { id: 1, texto: "Escola de Byrgenwerth", acerto: true },
+                { id: 2, texto: "Catedral de Yharnam", acerto: false },
+                { id: 3, texto: "SPTech", acerto: false },
+                { id: 4, texto: "Escola de Mensis", acerto: false }
+            ]
+        },
+        {
+            pergunta: "Qual Eminente é responsável pelo Sonho do Caçador?",
+            respostas: [
+                { id: 1, texto: "Ebrietas", acerto: false },
+                { id: 2, texto: "Amygdala", acerto: false },
+                { id: 3, texto: "Ganesha", acerto: false },
+                { id: 4, texto: "Presença da Lua", acerto: true }
+            ]
+        },
+
+        {
+            pergunta: "Onde o Caçador acorda no início do jogo?",
+            respostas: [
+                { id: 1, texto: "Clínica de Iosefka", acerto: true },
+                { id: 2, texto: "Sonho do Caçador", acerto: false },
+                { id: 3, texto: "Grande Catedral", acerto: false },
+                { id: 4, texto: "Na cama", acerto: false }
+            ]
+        },
+
+        {
+            pergunta: "Quem lidera a escola de Mensis?",
+            respostas: [
+                { id: 1, texto: "Willem", acerto: false },
+                { id: 2, texto: "Micolash", acerto: true },
+                { id: 3, texto: "Patches", acerto: false },
+                { id: 4, texto: "Kratos", acerto: false }
+            ]
+        },
+
+        {
+            pergunta: "Qual é o nome da cidade onde Bloodborne se passa?",
+            respostas: [
+                { id: 1, texto: "Cainhurst", acerto: false },
+                { id: 2, texto: "Yharnam", acerto: true },
+                { id: 3, texto: "Arkham", acerto: false },
+                { id: 4, texto: "Osasco", acerto: false }
+            ]
+        },
+
+        {
+            pergunta: "Quem era o primeiro estudioso a se rebelar contra o uso do sangue antigo?",
+            respostas: [
+                { id: 1, texto: "Master Willem", acerto: true },
+                { id: 2, texto: "Laurence", acerto: false },
+                { id: 3, texto: "Gerhman", acerto: false },
+                { id: 4, texto: "O Protagonista", acerto: false }
+            ]
+        },
+
+        {
+            pergunta: "O que acontece com o Caçador ao acumular muito Discernimento?",
+            respostas: [
+                { id: 1, texto: "Fica mais forte", acerto: false },
+                { id: 2, texto: "Fica imune a feras", acerto: false },
+                { id: 3, texto: "Começa a perder HP lentamente", acerto: false },
+                { id: 4, texto: "Passa a perceber criaturas antes invisíveis", acerto: true }
+            ]
+        },
+        {
+            pergunta: "Qual é a função da Boneca no Sonho do Caçador?",
+            respostas: [
+                { id: 1, texto: "Te atacar quando dorme", acerto: false },
+                { id: 2, texto: "Te ajudar a evoluir", acerto: true },
+                { id: 3, texto: "Te expulsar do sonho", acerto: false },
+                { id: 4, texto: "Servir chá", acerto: false }
+            ]
+        }
+
+    ]
+
+    // const perguntas = [
+    //     {
+    //         pergunta: "Você está andando sozinho à noite e ouve um barulho estranho no beco. O que faz?",
+    //         respostas: [
+    //             { id: 1, texto: "Investigo com cautela, preparado para qualquer coisa", perfil: "Caçador" },
+    //             { id: 2, texto: "Tento analisar de onde veio o som antes de decidir", perfil: "Estudante de Byrgenwerth" },
+    //             { id: 3, texto: "Peço proteção de Deus", perfil: "Clérico" },
+    //             { id: 4, texto: "Vou direto, sem medo das consequências", perfil: "Insano" }
+    //         ]
+    //     },
+    //     {
+    //         pergunta: "Um amigo te oferece experimentar algo completamente novo e desconhecido. O que você faz?",
+    //         respostas: [
+    //             { id: 1, texto: "Recuso, pode ser perigoso para minha alma", perfil: "Clérico" },
+    //             { id: 2, texto: "Aceito sem pensar, adoro o inesperado!", perfil: "Insano" },
+    //             { id: 3, texto: "Aceito, viver é arriscar!", perfil: "Caçador" },
+    //             { id: 4, texto: "Pesquiso antes, quero entender do que se trata", perfil: "Estudante de Byrgenwerth" }
+    //         ]
+    //     },
+    //     {
+    //         pergunta: "Você encontra um livro antigo que promete revelar segredos do universo, com símbolos considerados profanos. O que faz?",
+    //         respostas: [
+    //             { id: 1, texto: "Leio imediatamente, o conhecimento é poder", perfil: "Estudante de Byrgenwerth" },
+    //             { id: 2, texto: "Leio, mas só o suficiente para saber se é seguro", perfil: "Caçador" },
+    //             { id: 3, texto: "Não mexo, certas coisas não devem ser descobertas", perfil: "Clérico" },
+    //             { id: 4, texto: "Leio tudo de uma vez, quero me perder nesse mun", perfil: false }
+    //         ]
+    //     },
+    // ]
+
+    const pergunta = document.getElementById("pergunta");
+    const respostas = document.getElementById("respostas");
+    const proximo = document.getElementById("proximo");
+
+    let indexQuestaoAtual = 0;
+    let pontos = 0;
+
+    function iniciarQuiz() {
+        indexQuestaoAtual = 0;
+        pontos = 0;
+
+        mostrarPergunta();
+    }
+
+    function mostrarPergunta() {
+        let questaoAtual = perguntas[indexQuestaoAtual];
+        let questaoNo = indexQuestaoAtual + 1;
+        let questoesTotais = perguntas.length;
+
+        pergunta.innerHTML = `${questaoNo} de ${questoesTotais}. ${questaoAtual.pergunta}`;
+    }
+
+    iniciarQuiz();
+
+</script>

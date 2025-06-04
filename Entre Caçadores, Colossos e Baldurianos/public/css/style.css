@@ -793,7 +793,7 @@ body {
 .bengala {
     background-image: url(../assets/imagens/bloodborne/bloodborne_bengala.png);
 }
-
+/* 
 .conteudo .yharnam .fundoMascarado {
     position: absolute;
     inset: 0;
@@ -807,34 +807,123 @@ body {
 
 .conteudo .yharnam {
     position: relative;
-    height: 750px;
+    height: 650px;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
     z-index: 1;
+} */
 
-}
-
-.conteudo .janela {
-    position: relative;
-    height: 750px;
+.yharnam {
+    width: 100%;
+    height: 650px;
+    overflow: hidden;
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    z-index: 1;
-
-}
-
-.conteudo .janela .fundoMascarado1 {
-    position: absolute;
-    inset: 0;
-    background-image: url(../assets/imagens/bloodborne/bloodborne_janela.jpg);
+    align-items: flex-start; 
+    justify-content: center; 
+    flex-direction: column;
+    font-size: 28px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url(../assets/imagens/bloodborne/bloodborne_yharnam.png);
     background-size: cover;
-    background-position: center;
-    mask-image: linear-gradient(to right, transparent, black);
-    -webkit-mask-image: linear-gradient(to right, transparent, black);
-    z-index: 0;
+    padding-top: 50px;
+    background-position: top;
 }
+
+.horror h2{
+    width: 100%;
+    text-align: center;
+}
+
+
+
+.janela {
+    width: 100%;
+    height: 650px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start; 
+    justify-content: center; 
+    flex-direction: column;
+    font-size: 28px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url(../assets/imagens/bloodborne/bloodborne_janela.jpg);
+    background-size: cover;
+    padding-top: 50px;
+    background-position: top;
+}
+
+.padre {
+    width: 100%;
+    height: 650px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start; 
+    justify-content: center; 
+    flex-direction: column;
+    font-size: 28px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url(../assets/imagens/bloodborne/Bloodborne-Father-Gascoigne.jpg);
+    background-size: cover;
+    padding-top: 50px;
+    background-position: top;
+}
+
+.broche {
+    width: 100%;
+    height: 650px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start; 
+    justify-content: center; 
+    flex-direction: column;
+    font-size: 28px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url(../assets/imagens/bloodborne/bloodborne_mulher-broche.png);
+    background-size: cover;
+    padding-top: 50px;
+    background-position: bottom;
+}
+
+
+.capela {
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-size: 28px;
+    margin-top: 40px;
+}
+
+.capela .container {
+
+    width: 100%;
+
+}
+
+.capela .imagens {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+
+.capela .container img {
+    width: 41vw;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s;
+}
+
+.capela .container img:hover {
+    transform: scale(1.05);
+}
+
+.capela .container p {
+    margin: 0px 80px 0px 80px;
+}
+
 
 
 
