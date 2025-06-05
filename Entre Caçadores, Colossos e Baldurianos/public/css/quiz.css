@@ -1,0 +1,23 @@
+* {
+    margin: 0px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    /* background: linear-gradient(to bottom, #111 40%, #1c1c1c 100%);     */
+    background-image: url(../assets/imagens/fumaca_fundo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: #f0e6d2;
+    font-family: Georgia;
+
+}
+
+.conteudo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}

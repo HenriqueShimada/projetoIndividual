@@ -5,28 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Bloodborne</title>
+    <link href="./js/sessao.js">
+    <link rel="stylesheet" href="./css/quiz.css">
 </head>
 
 <body>
+    <div class="conteudo">
+        <div class="quiz">
 
-    <div class="quiz">
+            <h1>Quiz</h1>
 
-        <h1>Quiz</h1>
+            <div class="container">
+                <h2 id="tituloPergunta">pergunta</h2>
 
-        <div class="container">
-            <h2 id="tituloPergunta">pergunta</h2>
+                <div class="botaoRespostas">
+                    <button class="btn">1</button>
+                    <button class="btn">2</button>
+                    <button class="btn">3</button>
+                    <button class="btn">4</button>
+                </div>
 
-            <div class="botaoRespostas">
-                <button class="btn">1</button>
-                <button class="btn">2</button>
-                <button class="btn">3</button>
-                <button class="btn">4</button>
+                <button onclick="proximaPergunta()" id="botaoProximo">Próxima pergunta</button>
+
             </div>
 
-            <button onclick="proximaPergunta()" id="botaoProximo">Próxima pergunta</button>
-
         </div>
-
     </div>
 
 
@@ -38,7 +41,7 @@
 
     //creditos para o quiz: Coding With Luiz
     //https://youtu.be/KXvONdomGos?si=eqNpMi8aIERj64Qx
-
+    const id = Number(sessionStorage.ID_USUARIO);
     const perguntas = [
         {
             pergunta: "Quem é o primeiro boss obrigatório de Bloodborne?",
@@ -226,22 +229,37 @@
 
         if (correto) {
             pontos += 5;
-            acertos ++;
+            acertos++;
         }
-        else{
-            pontos -=2;
+        else {
+            pontos -= 2;
             erros++;
         }
-
-
         Array.from/*transforma em vetor*/(botaoRespostas.children /*todos os elemntos do botaoRespostas*/).forEach((botao) => { //percorre o novo vetor
             botao.disabled = true;
         });
         botaoProximo.style.display = "block";
     }
 
+    function persistirDadosQuiz() {
+        fetch(`/quiz/persistirDadosQuiz/${id}`, {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                pontucao: pontos,
+                acertividade: acertos,
+                erro: erros
+            })
+        }).then(resposta => {
+            if (resposta.ok) {
+                mostrarDashboard()
+            }
+        })
+    }
+
     function mostrarDashboard() {
-        window.location.href = "index.html"
+
+        window.location.href = "./dashboard/dashboard.html"
     }
 
     function proximaPergunta() {
@@ -250,7 +268,7 @@
             mostrarPergunta();
         }
         else {
-            mostrarDashboard();
+            persistirDadosQuiz();
         }
     }
 
