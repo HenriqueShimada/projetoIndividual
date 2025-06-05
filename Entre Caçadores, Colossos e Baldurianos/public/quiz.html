@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quiz Bloodborne</title>
 </head>
 
 <body>
@@ -14,16 +14,16 @@
         <h1>Quiz</h1>
 
         <div class="container">
-            <h2 id="pergunta">pergunta</h2>
+            <h2 id="tituloPergunta">pergunta</h2>
 
-            <div class="respostas">
+            <div class="botaoRespostas">
                 <button class="btn">1</button>
                 <button class="btn">2</button>
                 <button class="btn">3</button>
                 <button class="btn">4</button>
             </div>
 
-            <button id="proximo">Próxima pergunta</button>
+            <button onclick="proximaPergunta()" id="botaoProximo">Próxima pergunta</button>
 
         </div>
 
@@ -36,6 +36,8 @@
 
 <script>
 
+    //creditos para o quiz: Coding With Luiz
+    //https://youtu.be/KXvONdomGos?si=eqNpMi8aIERj64Qx
 
     const perguntas = [
         {
@@ -44,7 +46,7 @@
                 { id: 1, texto: "Father Gascoigne", acerto: true },
                 { id: 2, texto: "Cleric Beast", acerto: false },
                 { id: 3, texto: "Vicar Amelia", acerto: false },
-                { id: 4, texto: "Blood-starved Beast", acerto: false }
+                { id: 4, texto: "Gunther O'dim", acerto: false }
             ]
         },
         {
@@ -166,9 +168,9 @@
     //     },
     // ]
 
-    const pergunta = document.getElementById("pergunta");
-    const respostas = document.getElementById("respostas");
-    const proximo = document.getElementById("proximo");
+    const tituloPergunta = document.getElementById("tituloPergunta");
+    const botaoRespostas = document.querySelector(".botaoRespostas");
+    const botaoProximo = document.getElementById("botaoProximo");
 
     let indexQuestaoAtual = 0;
     let pontos = 0;
@@ -180,12 +182,72 @@
         mostrarPergunta();
     }
 
+    function resetar() {
+        botaoProximo.style.display = "none";
+        while (botaoRespostas.firstChild) {
+            botaoRespostas.removeChild(botaoRespostas.firstChild);
+        }
+    }
+
     function mostrarPergunta() {
+        resetar()
         let questaoAtual = perguntas[indexQuestaoAtual];
         let questaoNo = indexQuestaoAtual + 1;
         let questoesTotais = perguntas.length;
 
-        pergunta.innerHTML = `${questaoNo} de ${questoesTotais}. ${questaoAtual.pergunta}`;
+        tituloPergunta.innerHTML = `${questaoNo} de ${questoesTotais}. ${questaoAtual.pergunta}`;
+
+        // for (let i = 0; i < questaoAtual.respostas.length; i++) {
+        //     const resposta = questaoAtual.respostas[i]; 
+        //     const botao = document.createElement("button");
+        //     botao.innerHTML = resposta.texto;
+        //     botao.dataset.id = resposta.id; 
+        //     respostas.appendChild(botao);  
+        // }
+
+
+        questaoAtual.respostas.forEach((resposta) => { //o foreach tira a necessidade de criar uma variavel i para percorrer um vetor, faz isso automaticamente
+            const botao = document.createElement("button");
+            botao.innerHTML = resposta.texto;
+            botao.dataset.id = resposta.id; //coloca o id do html nos botoes das respostas
+            botao.addEventListener("click", selecionarResposta)
+            botaoRespostas.appendChild(botao);
+        })
+    }
+
+    function selecionarResposta(e) { //e = evento
+        respostas = perguntas[indexQuestaoAtual].respostas;
+        const respostaCorreta = respostas.filter((resposta) => resposta.acerto == true)[0];
+
+        const selectBtn = e.target;  //identifica qual botao clicou
+        const correto = selectBtn.dataset.id == respostaCorreta.id;
+
+        if (correto) {
+            pontos += 5;
+        }
+        else{
+            pontos -=2;
+        }
+
+
+        Array.from/*transforma em vetor*/(botaoRespostas.children /*todos os elemntos do botaoRespostas*/).forEach((botao) => { //percorre o novo vetor
+            botao.disabled = true;
+        });
+        botaoProximo.style.display = "block";
+    }
+
+    function mostrarDashboard() {
+        window.location.href = "index.html"
+    }
+
+    function proximaPergunta() {
+        indexQuestaoAtual++;
+        if (indexQuestaoAtual < perguntas.length) {
+            mostrarPergunta();
+        }
+        else {
+            mostrarDashboard();
+        }
     }
 
     iniciarQuiz();

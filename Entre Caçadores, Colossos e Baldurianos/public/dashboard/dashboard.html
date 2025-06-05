@@ -1,49 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="../css/dashboards.css">
 </head>
+
 <body>
 
-    
-    
-<div class ="container">
+
+<div>
+  <div class="grafico">
+    Histórico de pontos:
     <canvas id="myChart1" class="grafico"></canvas>
-    <canvas id="myChart2" class="grafico"></canvas>
+  </div>
+  <div>
+    <div>
+      Acertos:
+    </div>
+    <div>
+      Erros:
+    </div>
+    <div>
+      Maior pontuação:
+    </div>
+    <div>
+      Conquistas:
+    </div>
+  </div>
 </div>
 
 </body>
+
 </html>
 
 <script>
-    const chart1 = document.getElementById('myChart1');
-  
-    new Chart(chart1, {
-      type: 'line',
-      data: {
-        labels: ['12:00	', '13:00', '14:00', '15:00	', '16:00', '17:00', '18:00'],
-        datasets: [{
-          label: 'Temperatura',
-          data: [0	, 1, 2, 3, 6, 9, 7],
-          backgroundColor: 'rgb(255,99,132)',
-          borderColor: 'rgb(255,99,132)'
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: false
-          }
+  const chart1 = document.getElementById('myChart1');
+
+  new Chart(chart1, {
+    type: 'line',
+    data: {
+      labels: ['12:00	', '13:00', '14:00', '15:00	', '16:00', '17:00', '18:00'],
+      datasets: [{
+        label: 'Temperatura',
+        data: [0, 1, 2, 3, 6, 9, 7],
+        backgroundColor: 'rgb(255,99,132)',
+        borderColor: 'rgb(255,99,132)'
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: false
         }
       }
-    });
+    }
+  });
 
-    const chart2 = document.getElementById('myChart2');
+  const chart2 = document.getElementById('myChart2');
 
-    new Chart(chart2, {
+  new Chart(chart2, {
     type: 'bar',
     data: {
       labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
@@ -52,11 +71,11 @@
         data: [30, 29, 28, 25, 22, 23],
         backgroundColor: 'rgb(255,99,132)'
       },
-    {
+      {
         label: 'Umidade Média',
         data: [80, 82, 80, 85, 80, 83],
         backgroundColor: 'rgb(30,144,255)'
-    }]
+      }]
     },
     options: {
       scales: {
@@ -66,5 +85,5 @@
       }
     }
   });
-    
-  </script>
+
+</script>
