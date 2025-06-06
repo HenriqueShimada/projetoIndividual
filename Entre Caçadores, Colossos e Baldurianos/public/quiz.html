@@ -25,7 +25,7 @@
                     <button class="btn">4</button>
                 </div>
 
-                <button onclick="proximaPergunta()" id="botaoProximo">Próxima pergunta</button>
+                <button class="btn" onclick="proximaPergunta()" id="botaoProximo">Próxima pergunta</button>
 
             </div>
 
@@ -214,6 +214,7 @@
         questaoAtual.respostas.forEach((resposta) => { //o foreach tira a necessidade de criar uma variavel i para percorrer um vetor, faz isso automaticamente
             const botao = document.createElement("button");
             botao.innerHTML = resposta.texto;
+            botao.classList.add("btn");
             botao.dataset.id = resposta.id; //coloca o id do html nos botoes das respostas
             botao.addEventListener("click", selecionarResposta)
             botaoRespostas.appendChild(botao);

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sonho do caçador</title>
     <link rel="stylesheet" href="./css/style.css">
-    
+
 </head>
 
 <body class="pgBloodborne">
@@ -21,45 +21,118 @@
     <div class="conteudo">
 
         <div class="dream">
-            <div class="fundoMascarado"></div>
             <div class="container">
-                <p class="descricaoJogo">Um refúgio silencioso entre a vida e a morte. No Sonho do Caçador, o caçador repousa, aprimora suas habilidades
-                e se prepara para a próxima caçada. Um espaço onírico e sereno, onde o tempo parece não passar — mas que, no fim,
-                revela sua verdadeira e melancólica natureza.</p>
+                <p class="descricaoJogo">Um refúgio silencioso entre a vida e a morte. No Sonho do Caçador, o caçador
+                    repousa, aprimora suas habilidades
+                    e se prepara para a próxima caçada. Um espaço onírico e sereno, onde o tempo parece não passar — mas
+                    que, no fim,
+                    revela sua verdadeira e melancólica natureza.</p>
+                <p class="descricaoJogo">
+                    O Sonho do Caçador é apenas um abrigo, é uma prisão velada sob a forma de consolo. Um lugar moldado
+                    pela Presença da Lua para aprisionar caçadores, oferecendo-lhes um simulacro de descanso entre as
+                    caçadas. Aqui, a realidade se mistura ao delírio.
+                </p>
 
-                <button class="botao" onclick="tocarMusica()">Música</button>
             </div>
 
-            <audio id="musicaSonho">
-                <source src="./audios/Hunter's Dream.mp3" type="audio/mp3">
-            </audio>
-        </div>
 
-        <div class="boneca">
-            <div class="container">
-                <button class="botao" onclick="conversar()">Coversar</button>
-                <div id="div_legenda2"></div>
-            </div>
         </div>
 
 
-        <div class="gerhman">
+        <div class="mecanica">
+            <h2>Gehrman</h2>
             <div class="container">
-                <button class="botao" onclick="conversar()">Coversar</button>
-                <div id="div_legenda2"></div>
+                <div>
+                    <img src="./assets/imagens/bloodborne/bloodborne_gerhman.png">
+                    <img src="./assets/imagens/bloodborne/bloodborne_gerhman2.png">
+                </div>
+
+
+                <p>Gehrman, o primeiro caçador que repousa neste sonho — ou está preso nele. Apesar de sua aparência frágil
+                    e
+                    sua voz cansada, ele guarda um longo passado e conhece bem o mundo fora desse universo onírico. Sua
+                    ligação com a Presença da Lua o mantém atado ao ciclo interminável da Caçada.
+
+                </p>
+
             </div>
         </div>
 
-        <div class="escolherArma">
+        <div class="mecanica">
+            <h2>A Boneca</h2>
             <div class="container">
-                <div class="serra" onclick="pegarArma()"></div>
-                <div class="bengala" onclick="pegarArma()"></div>
-                <div class="machado" onclick="pegarArma()"></div>
+                <div class="coluna">
+                    <p>A Boneca é a figura maternal do Sonho. Criada à imagem de alguém que Gehrman amou no passado, ela
+                        guia o Caçador, ajuda a canalizar ecos de sangue e oferece ajuda entre as noites sangrentas. Sua
+                        voz suave esconde segredos mais profundos do que aparenta.
+                    </p>
+
+                    <button class="botao" onclick="conversar()">Coversar</button>
+                    <div id="div_legenda2"></div>
+
+                </div>
+
+                <div>
+                    <img src="./assets/imagens/bloodborne/bloodborne_doll_gif.gif
+                    ">
+                    <img src="./assets/imagens/bloodborne/bloodborne_doll_gif2.gif">
+                </div>
+
             </div>
         </div>
+
+        <div class="mecanica">
+            <h2>Mensageiros</h2>
+            <div class="container">
+                <div>
+                    <img src="./assets/imagens/bloodborne/bloodborne_messengers.gif">
+                    <img src="./assets/imagens/bloodborne/bloodborne_messengers.jpg">
+                </div>
+                <div class="coluna">
+                    <p>Seres pequenos, brancos e inquietantes que emergem do chão em lugares tocados pelo sonho. Servos
+                        silenciosos do Caçador, entregam armas, carregam mensagens e observam — sempre observam. Ninguém
+                        sabe ao certo de onde vêm... mas eles sempre estiveram lá
+                    </p>
+                    <br><br><br><br>
+                    <button class="botao" onclick="mensageiro()">Conversar</button>
+
+                    <audio id="mensageiro1">
+                        <source src="./assets/audios/Bloodborne ｜ Messenger Appear [Sound Effect].mp3" type="audio/mp3">
+                    </audio>
+
+                    <audio id="mensageiro2">
+                        <source src="./assets/audios/Bloodborne ｜ Messenger Laugh [Sound Effect].mp3" type="audio/mp3">
+                    </audio>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="mecanica">
+            <h2>Presença da Lua</h2>
+            <div class="container">
+
+
+                <p>Sempre presente no céu, a Presença da Lua vive entre a realidade e do delírio. É ela quem mantém o
+                    Sonho do Caçador vivo — uma outra realidade onírica, que aprisionam os caçadores. Embora raramente
+                    mencionada, sua influência é absoluta, controlando o destino de todos os caçadores. Aqueles que
+                    olham demais para ela costumam perder algo de si, e aqueles que a compreendem... já não são os
+                    mesmos.
+                </p>
+
+                <div>
+                    <img src="./assets/imagens/bloodborne/bloodborne_moon_presence.gif">
+                    <img src="./assets/imagens/bloodborne/bloodborne_moon_presence.png">
+                </div>
+
+            </div>
+        </div>
+
+
 
 
     </div>
+
 
 </body>
 
@@ -67,22 +140,30 @@
 
 <script>
 
-    var discernimento = parseInt(localStorage.getItem('discernimento')) || 0;
+    var discernimento = parseInt(sessionStorage.getItem('discernimento')) || 0;
     div_discernimento.innerHTML = discernimento;
 
-    var temArma = parseInt(localStorage.getItem('temArma')) || 0;
+    const voz1 = document.getElementById("mensageiro1");
+    const voz2 = document.getElementById("mensageiro2");
 
-    document.addEventListener("DOMContentLoaded", function () {
-        aparecerArma();
-    });
+    const listaVoz = [voz1, voz2];
+
+    function mensageiro() {
+        let audioAleatorio = Math.floor(Math.random() * listaVoz.length);
+        let audio = listaVoz[audioAleatorio];
+
+        audio.currentTime = 0;
+        audio.play();
+    }
+
 
     function aparecerArma() {
         if (temArma > 0) {
-            document.querySelector('.escolherArma').style.display = 'none'; 
+            document.querySelector('.escolherArma').style.display = 'none';
         }
     }
 
-    function tocarMusica(){
+    function tocarMusica() {
         var musica = document.getElementById("musicaSonho");
         musica.play();
     }
