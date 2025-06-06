@@ -19,7 +19,7 @@
   </div>
   <div class="kpi">
     <div>
-      Acertos:
+      Acertos: <span id="qtdAcerto">0</span>
     </div>
     <div>
       Erros:
@@ -38,6 +38,7 @@
 </html>
 
 <script>
+  const id = Number(sessionStorage.ID_USUARIO);
   const chart1 = document.getElementById('myChart1');
 
   new Chart(chart1, {
@@ -60,6 +61,32 @@
       }
     }
   });
+
+
+window.addEventListener("load", function(event) {
+  carregarAcertos(id);
+})
+
+
+  function carregarAcertos(id){
+    fetch(`/dashboard/obterAcertos/${id}`).then(function (acertos){
+      if (acertos.ok) {
+        acertos.json().then(function (acertosUsuario){
+          console.log(JSON.stringify(acertosUsuario[0].acertos))
+          exibirAcertos(acertosUsuario)
+        })
+      }else{
+        console.log('deu ruim')
+      }
+    })
+    .catch(erro => console.error("Erro ao pegar os acertos: ", erro));
+  }
+
+  function exibirAcertos(acertosUsuario){
+          const spanAcerto = document.getElementById("qtdAcerto");
+      
+        spanAcerto.textContent = acertosUsuario[0].acertos
+  }
 
 
 </script>

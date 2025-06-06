@@ -877,14 +877,14 @@ body {
     font-size: 39px;
 }
 
-.indexBloodborne .nav .navegacao{
+.nav .navegacao{
     display: flex;
     flex-direction: row;
     list-style: none;
 
 }
 
-.indexBloodborne .nav .navegacao a{
+.nav .navegacao a{
     text-decoration: none;
     color: #f0e6d2;
     margin: 0px 20px;
