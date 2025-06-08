@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <div class="navBloodborne">
+        <div class="discernimento">
+            <div id="div_discernimento"></div>
+            <img src="./assets/imagens/bloodborne/bloodborne_discernimento.png" alt="">
+        </div>
+    </div>
+
+    <div class="yharnam mensis">
+        <h2>Pesadelo de Mensis</h2>
+        <div class="container">
+            <p class="descricaoJogo">
+                O Pesadelo de Mensis é o reflexo distorcido da insanidade de estudiosos que ousaram ir longe demais.
+                Criado a partir de rituais da Escola de Mensis, este domínio onírico abriga os resquícios de uma mente
+                coletiva em colapso. É um labirinto de corredores escuros, torres impossíveis e símbolos cósmicos. A
+                própria realidade se desfaz, e a presença dos Eminentes está sempre presente. Aqui, a sanidade é sua
+                maior vulnerabilidade.
+            </p>
+        </div>
+    </div>
+
+    <div class="mecanica">
+        <h2>Ambientação</h2>
+        <div class="container">
+            <div>
+                <img src="./assets/imagens/bloodborne/bloodborne_escola.png">
+                <img src="./assets/imagens/bloodborne/bloodborne_mensis2.png">
+            </div>
+            <p>
+                O Pesadelo de Mensis é uma dimensão onírica criada por Micolash, o líder da Escola de Mensis — uma seita
+                de estudiosos que abandonaram os limites da razão em busca de contato com os Eminentes. Obcecados por
+                transcender a existência humana, eles utilizaram rituais profanos para tentar alcançar um plano superior
+                de consciência. O resultado foi este pesadelo — uma realidade fragmentada, visível apenas por aqueles
+                cuja sanidade já foi completamente corroída. Aqui, a lógica se desfaz, o tempo colapsa, e a própria
+                existência se curva à influência cósmica.
+
+            </p>
+        </div>
+    </div>
+
+    <div class="mecanica">
+        <h2>Inimigos</h2>
+        <div class="container">
+            <p>
+                O local é povoado por horrores insanos: estudiosos enlouquecidos, Marionetes de Ferro que atacam em
+                grupo com brutalidade, gigantes com sinos que alertam inimigos próximos, e os temidos Cérebroides —
+                criaturas humanoides deformadas por rituais cósmicos. Há ainda o aterrorizante Cérebro de Mensis, uma
+                presença viva que provoca Frenesi apenas com seu olhar.
+            </p>
+            <div>
+                <img src="./assets/imagens/bloodborne/bloodborne_estudante.png">
+                <img src="./assets/imagens/bloodborne/bloodborne_cerebro.png">
+            </div>
+        </div>
+    </div>
+
+    <div class="mecanica">
+        <h2>Micolash, Anfitrião do Pesadelo</h2>
+        <div class="container">
+
+            <div class="coluna">
+                <p>
+                    Micolash é o líder da Escola de Mensis, e neste pesadelo ele está aprisionado em um ciclo eterno de
+                    delírios. Obcecado pelos Grandes, ele vaga por corredores murmurando sobre Kos e olhos cósmicos. A
+                    batalha é incomum: uma perseguição labiríntica onde o caçador deve encurralá-lo e enfrentar seus
+                    feitiços arcanos. Micolash simboliza o colapso da razão diante do incompreensível.
+                </p>
+                <br><br><br><br>
+                <button class="botao" onclick="derrotar()">Derrotar</button>
+            </div>
+            <div>
+                <img src="./assets/imagens/bloodborne/bloodborne_micolash2.png">
+                <img src="./assets/imagens/bloodborne/bloodborne_micolash3.jpg">
+            </div>
+        </div>
+    </div>
+
+    <div class="mecanica">
+        <h2>Ama de Leite Mergo</h2>
+        <div class="container">
+            <div>
+                <img src="./assets/imagens/bloodborne/bloodborne_ama2.png">
+                <img src="./assets/imagens/bloodborne/bloodborne_ama.png">
+            </div>
+            <div class="coluna">
+                <p>
+                    A guardiã do recém-nascido Mergo, a Ama de Leite, é uma entidade silenciosa e espectral. Ela
+                    representa a manifestação final da loucura gerada pelo contato com os Grandes. A batalha acontece em
+                    meio ao choro distante de Mergo, com uma atmosfera solene e trágica. Sua derrota marca o fim do
+                    Pesadelo e a libertação da criança que nunca deveria ter nascido.
+                </p>
+                <br><br><br><br>
+                <button class="botao" onclick="derrotar2()">Derrotar</button>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+
+    var discernimento = parseInt(sessionStorage.getItem('discernimento')) || 0;
+    div_discernimento.innerHTML = discernimento;
+
+    function derrotar() {
+        if (discernimento >= 15) {
+            return
+        } else {
+            discernimento += 2;
+            div_discernimento.innerHTML = discernimento;
+            sessionStorage.setItem('discernimento', discernimento);
+        }
+    }
+
+    function derrotar2() {
+        if (discernimento >= 18) {
+            return
+        } else {
+            discernimento += 3;
+            div_discernimento.innerHTML = discernimento;
+            sessionStorage.setItem('discernimento', discernimento);
+        }
+    }
+
+</script>

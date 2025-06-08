@@ -16,7 +16,7 @@
 
         <h1>Bloodborne</h1>
 
-                <div class="navegacao">
+        <div class="navegacao">
             <li>
                 <a href="index.html">Inicial</a>
             </li>
@@ -111,6 +111,17 @@
         <div class="areas">
             <h2>Principais Locais de Yharnam e Além</h2>
             <div class="divisao">
+
+                <div onclick="sonho()" class="area sonho">
+                    <div class="container">
+                        <h3>O Sonho do Caçador</h3>
+                        Um refúgio etéreo onde o Caçador repousa e se prepara. Guiado por Gehrman e pela Boneca, é um
+                        espaço
+                        de
+                        descanso e reflexão, mas também um lembrete de que a caçada jamais termina.
+                    </div>
+                </div>
+
                 <div class="area central" onclick="central()">
                     <div class="container">
                         <h3>Yharnam Central</h3>
@@ -120,15 +131,7 @@
                     </div>
                 </div>
 
-                <div class="area antiga">
-                    <div class="container">
-                        <h3>Antiga Yharnam</h3>
 
-                        Uma parte da cidade consumida pelo fogo, isolada para conter a praga das feras. Caminhar por
-                        essas
-                        ruínas é testemunhar o desespero de uma cidade que sacrificou seus próprios cidadãos.
-                    </div>
-                </div>
             </div>
 
             <div class="divisao">
@@ -142,7 +145,31 @@
                     </div>
                 </div>
 
-                <div class="area academia">
+                <div class="area antiga" onclick="antiga()">
+                    <div class="container">
+                        <h3>Antiga Yharnam</h3>
+
+                        Uma parte da cidade consumida pelo fogo, isolada para conter a praga das feras. Caminhar por
+                        essas
+                        ruínas é testemunhar o desespero de uma cidade que sacrificou seus próprios cidadãos.
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="divisao">
+
+
+                <div class="area floresta" onclick="floresta()">
+                    <div class="container">
+                        <h3>Floresta Proibida</h3>
+                        Uma densa e floresta repleta de armadilhas e bestas selvagens. É o caminho que conecta Yharnam à
+                        antiga Academia de Byrgenwerth.
+                    </div>
+                </div>
+
+                    <div class="area academia" onclick="byrgenwerth()">
                     <div class="container">
                         <h3>Academia de Byrgenwerth</h3>
                         Um antigo centro acadêmico onde tudo começou. Foi em Byrgenwerth que os estudiosos descobriram
@@ -151,10 +178,22 @@
                         da Grande Cidadela subterrânea e o sangue antigo, desencadeando a tragédia que assolou Yharnam.
                     </div>
                 </div>
+
+
             </div>
 
             <div class="divisao">
-                <div class="area mensis">
+
+                <div class="area yahargul" onclick="yahargul()">
+                    <div class="container">
+                        <h3>Yahar'gul</h3>
+                        Yahar'gul, a Vila Invisível
+                        Um local oculto onde cultistas realizam rituais insanos em busca de transcendência. Estruturas
+                        retorcidas e horrores cósmicos revelam a face mais sombria de Yharnam.
+                    </div>
+                </div>
+
+                <div class="area mensis" onclick="mensis()">
                     <div class="container">
                         <h3>O Pesadelo de Mensis</h3>
                         Criado pelos estudiosos da Escola de Mensis, liderados por Micolash, este pesadelo é uma
@@ -166,30 +205,10 @@
                 </div>
 
 
-
-                <div onclick="sonho()" class="area sonho">
-                    <div class="container">
-                        <h3>O Sonho do Caçador</h3>
-                        Um refúgio etéreo onde o Caçador repousa e se prepara. Guiado por Gehrman e pela Boneca, é um
-                        espaço
-                        de
-                        descanso e reflexão, mas também um lembrete de que a caçada jamais termina.
-                    </div>
-                </div>
             </div>
 
             <div class="divisao">
-
-                <div class="area yahargul">
-                    <div class="container">
-                        <h3>Yahar'gul</h3>
-                        Yahar'gul, a Vila Invisível
-                        Um local oculto onde cultistas realizam rituais insanos em busca de transcendência. Estruturas
-                        retorcidas e horrores cósmicos revelam a face mais sombria de Yharnam.
-                    </div>
-                </div>
-
-                <div class="area pesadelo">
+                <div class="area pesadelo"  onclick="pesadelo()">
                     <div class="container">
                         <h3>O Pesadelo do Caçador</h3>
                         Uma dimensão onírica onde os caçadores aprisionados vivem e morrem eternamente, presos pela
@@ -199,8 +218,20 @@
                     </div>
                 </div>
 
+                <div class="area pthumeru" onclick="pthumeru()">
+                    <div class="container">
+                        <h3>Pthumeru</h3>
+                        Uma antiga tumba subterrânea selada sob Yharnam, lar da extinta civilização Pthumeriana. Entre
+                        câmaras esquecidas e rituais profanos, ecoam os lamentos de um povo que buscou os Grandes e foi
+                        consumido por seu poder.
+                    </div>
+                </div>
+
             </div>
+
         </div>
+
+
 
         <div class="cacador">
             <h2>A Figura do Caçador</h2>
@@ -215,7 +246,9 @@
 
             <h2>Imersao</h2>
             <div class="container">
-                Para uma maior imersão ao universo do jogo, onde não há uma explicação clara sobre o caminho, foi preparado uma silumação das funcionalidades do jogo, mostrando diferentes finais e acontecimentos do jogo.
+                Para uma maior imersão ao universo do jogo, onde não há uma explicação clara sobre o caminho, foi
+                preparado uma silumação das funcionalidades do jogo, mostrando diferentes finais e acontecimentos do
+                jogo.
 
                 <button class="botao" onclick="iniciar()">Iniciar</button>
             </div>
@@ -236,22 +269,59 @@
     var discernimento = parseInt(sessionStorage.getItem('discernimento')) || 0;
     div_discernimento.innerHTML = discernimento;
 
-function iniciar(){
-    window.location.href = "quiz.html";
-}
-function sonho(){
-    window.location.href = "dream.html";
+    function iniciar() {
+        window.location.href = "quiz.html";
+    }
+    function sonho() {
+        window.location.href = "dream.html";
 
-}
+    }
 
-function central(){
-    window.location.href = "yharnam.html";
+    function central() {
+        window.location.href = "yharnam.html";
 
-}
+    }
 
-function catedral(){
-    window.location.href = "catedral.html";
+    function catedral() {
+        window.location.href = "catedral.html";
 
-}
+    }
+
+    function antiga() {
+        window.location.href = "antiga.html";
+
+    }
+
+
+    function byrgenwerth() {
+        window.location.href = "byrgenwerth.html";
+
+    }
+
+    function floresta() {
+        window.location.href = "floresta.html";
+
+    }
+
+
+    function yahargul() {
+        window.location.href = "yahargul.html";
+
+    }
+
+   function mensis() {
+        window.location.href = "mensis.html";
+
+    }
+
+   function pthumeru() {
+        window.location.href = "pthumeru.html";
+
+    }
+
+   function pesadelo() {
+        window.location.href = "pesadelo.html";
+
+    }
 
 </script>

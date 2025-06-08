@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <div class="navBloodborne">
+        <div class="discernimento">
+            <div id="div_discernimento"></div>
+            <img src="./assets/imagens/bloodborne/bloodborne_discernimento.png" alt="">
+        </div>
+    </div>
+
+    <div class="yharnam pthumeru">
+        <h2>Pthumeru</h2>
+        <div class="container">
+            <p>
+                Pthumeru é acessível através de rituais com cálices antigos. Pthumeru são antigos labirintos
+                subterrâneos esculpidos sob Yharnam. Criadas pelos Pthumerianos — uma civilização ancestral em contato
+                com os Eminentes, essas catacumbas guardam segredos esquecidos, horrores adormecidos e restos de uma era
+                anterior à humanidade atual. Ao explorar seus túneis sem fim, o jogador enfrenta desafios cada vez mais
+                obscuros e místicos, conectando o passado com o terror presente do mundo.
+            </p>
+        </div>
+    </div>
+
+    <div class="mecanica">
+        <h2>Inimigos</h2>
+        <div class="container">
+            <div>
+                <img src="./assets/imagens/bloodborne/bloodborne_gabriel.png">
+                <img src="./assets/imagens/bloodborne/bloodborne_mago.png">
+            </div>
+            <p>
+                A fauna das dungeons varia entre mortos-vivos deformados, criaturas parasitárias e os próprios
+                Pthumerianos. Os mais comuns são os guardas espectrais e guerreiros de elite, rápidos e letais, com
+                olhos brilhando no escuro. Além disso, inimigos amaldiçoados com fogo, veneno e rituais arcanos aumentam
+                o nível de perigo conforme se avança. Explorar essas dungeons é encarar o coração do legado dos Grandes
+                — um passado que nunca deveria ter sido desenterrado.
+            </p>
+
+        </div>
+    </div>
+
+    <div class="mecanica">
+        <h2>Pthumerianos</h2>
+        <div class="container">
+            <p>
+                Os Pthumerianos foram uma antiga civilização subterrânea dotada de vasto conhecimento arcano. Originais
+                habitantes das profundezas de Yharnam, eles se destacavam por sua ligação direta com os Eminentes.
+                Servindo como guardiões de antigos segredos, os Pthumerianos realizavam rituais e experimentos com
+                sangue e alma, buscando transcender os limites da existência mortal. Ao contrário da Academia ou da
+                Igreja, seu contato com os Grandes não se deu por pesquisa, mas por devoção e legado hereditário.
+            </p>
+            <div>
+                <img src="./assets/imagens/bloodborne/bloodborne_pthumeriano.png">
+            </div>
+        </div>
+    </div>
+
+    <div class="mecanica">
+        <h2>Yharnam, a Rainha Pthumeriana</h2>
+        <div class="container">
+
+            <div>
+                <img src="./assets/imagens/bloodborne/bloodborne_rainha.png">
+                <img src="./assets/imagens/bloodborne/bloodborne_rainha2.png">
+            </div>
+
+            <div class="coluna">
+            <p>
+                Yharnam, a Rainha Pthumeriana, é a figura mais emblemática dessa civilização extinta. Encontrada em
+                visões e nos níveis mais profundos das Dungeons dos Cálices, ela representa a união entre o humano e o
+                divino. Após engravidar de um Eminente, seu corpo e mente foram corrompidos, transformando sua dor em
+                luto eterno. Seu choro ressoa por entre os corredores silenciosos das tumbas, e sua presença marca o
+                ápice da descida às profundezas. Yharnam tornou-se símbolo de sacrifício e consequência do contato
+                direto com o poder dos Eminentes.
+            </p>
+            <br><br><br><br>
+            <button class="botao" onclick="derrotar()">Derrotar</button>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    var discernimento = parseInt(sessionStorage.getItem('discernimento')) || 0;
+    div_discernimento.innerHTML = discernimento;
+
+    function derrotar() {
+        if (discernimento >= 23) {
+            return
+        } else {
+            discernimento += 3;
+            div_discernimento.innerHTML = discernimento;
+            sessionStorage.setItem('discernimento', discernimento);
+        }
+    }
+
+</script>

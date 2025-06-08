@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <div class="navBloodborne">
+        <div class="discernimento">
+            <div id="div_discernimento"></div>
+            <img src="./assets/imagens/bloodborne/bloodborne_discernimento.png" alt="">
+        </div>
+    </div>
+
+    <div class="conteudo">
+        <div class="yharnam academia">
+            <h2>Byrgenwerth</h2>
+            <div class="container">
+                <p class="descricaoJogo">
+                    Byrgenwerth é uma antiga e isolada academia escondida às margens de um lago silencioso. Seu passado
+                    está enraizado na descoberta dos Grandes e no estudo do sangue antigo — foi aqui que tudo começou. O
+                    silêncio opressor, o ar denso e os sussurros do saber proibido permeiam o ambiente. Ao chegar, o
+                    jogador sente que ultrapassou a fronteira entre o conhecimento humano e o incompreensível. Cada
+                    passo é como invadir um segredo que deveria ter permanecido enterrado.
+                </p>
+            </div>
+        </div>
+
+        <div class="mecanica">
+            <h2>Inimigos</h2>
+            <div class="container">
+                <div>
+                    <img src="./assets/imagens/bloodborne/bloodborne_aranha.png">
+                    <img src="./assets/imagens/bloodborne/bloodborne_flor.png">
+                </div>
+                <p>
+                    Apesar de ser uma área curta, Byrgenwerth é uma das princiais e mais importantes áreas. Seus
+                    principais inimigos são ex-estudiosos deformados pela busca pelo conhecimento proibido. As criaturas
+                    humanóides cobertas de olhos — com corpos contorcidos e membros finos como os de uma aranha —
+                    representam o resultado físico da obsessão por "olhos na mente", o verdadeiro objetivo da academia.
+                    Além delas, uma grande, a Lesma de Raios, protege o jardim da entrada para o lago. Essa entidade
+                    dispara relâmpagos e parece não pertencer mais ao mundo físico, sendo possivelmente o resultado de
+                    um experimento que tocou diretamente uma presença superior.
+
+                </p>
+            </div>
+        </div>
+
+        <div class="mecanica">
+            <h2>Brainsucker</h2>
+            <div class="container">
+
+                <p>
+                    Brainsuckers são estudiosos humanos corrompidos pelo saber arcano e pelo contato com os Grandes. A
+                    busca
+                    por iluminação transformou-os em monstros deformados, condenados a roubar discernimento das vítimas
+                    para
+                    preencher o vazio deixado pela própria sanidade perdida.
+                </p>
+                <div>
+                    <img src="./assets/imagens/bloodborne/bloodborne_brainsucker.png">
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="mecanica">
+            <h2>Master Willem</h2>
+            <div class="container">
+                <div>
+                    <img src="./assets/imagens/bloodborne/bloodborne_willem.png">
+                    <img src="./assets/imagens/bloodborne/bloodborne_willem2.png">
+                </div>
+
+                <p>
+                    Willem, reitor da academia e responsável pelas pesquisas que levaram à ascensão do sangue antigo, é
+                    encontrado imóvel, contemplando o lago. Ele não fala, não se move — apenas observa. Sua filosofia se
+                    opunha ao uso do sangue, preferindo o crescimento do pensamento e da consciência. Ele representa a
+                    falha
+                    de uma mente que alcançou o limite do saber, mas foi deixada para trás por aqueles que escolheram
+                    outro
+                    caminho.
+                </p>
+
+            </div>
+
+            <div class="mecanica">
+                <h2>Boss: Rom, a Aranha Vácua</h2>
+                <div class="container">
+                    <div class="coluna">
+                        <p>
+                            Rom, antes uma humana e discípula fiel de Willem, tornou-se um ser cósmico após receber o toque de um Eminente. Diferente de outras experiências envolvendo o sangue antigo, sua transformação foi resultado da tentativa de alcançar uma nova forma de consciência por meios mais sutis. Ela não é hostil por natureza, mas uma consequência do desejo da academia de romper os limites humanos. Sua existência funciona como um
+                            selo: enquanto Rom vive, o verdadeiro horror permanece oculto. Derrotá-la é abrir os olhos para algo que não pode mais ser desfeito.
+
+                        </p>
+                        <br><br><br><br>
+                        <button class="botao" onclick="derrotar()">Derrotar</button>
+                    </div>
+                    <div>
+                        <img src="./assets/imagens/bloodborne/bloodborne_rom.png">
+                        <img src="./assets/imagens/bloodborne/bloodborne_rom2.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>
+
+</html>
+
+<script>
+
+
+    var discernimento = parseInt(sessionStorage.getItem('discernimento')) || 0;
+    div_discernimento.innerHTML = discernimento;
+
+    function derrotar() {
+        if (discernimento >= 10) {
+            return
+        } else {
+            discernimento += 3;
+            div_discernimento.innerHTML = discernimento;
+            sessionStorage.setItem('discernimento', discernimento);
+        }
+    }
+
+</script>

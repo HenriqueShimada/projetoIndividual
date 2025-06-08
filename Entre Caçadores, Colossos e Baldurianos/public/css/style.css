@@ -851,6 +851,43 @@ body {
     height: 670px;
 }
 
+.yharnam.academia{
+    background-image:linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)),  url(../assets/imagens/bloodborne/bloodborne_academia.jpeg);
+    background-position: bottom;
+    height: 670px;
+}
+
+.yharnam.floresta{
+    background-image:linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)),  url(../assets/imagens/bloodborne/bloodborne_floresta2.png);
+    background-position: bottom;
+    height: 670px;
+}
+
+.yharnam.yahargul{
+    background-image:linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)),  url(../assets/imagens/bloodborne/bloodborne_yahargul.png);
+    background-position: bottom;
+    height: 670px;
+}
+
+.yharnam.mensis{
+    background-image:linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)),  url(../assets/imagens/bloodborne/bloodborne_mensis.jpg);
+    background-position: bottom;
+    height: 670px;
+}
+
+.yharnam.pthumeru{
+    background-image:linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),  url(../assets/imagens/bloodborne/bloodborne_pthumeru.png);
+    background-position: center;
+    height: 670px;
+}
+
+.yharnam.pesadelo{
+    background-image:linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),  url(../assets/imagens/bloodborne/bloodborne_pesadelo.jpg);
+    background-position: center;
+    height: 670px;
+}
+
+
 .yharnam h2{
     width: 100%;
     text-align: center;
@@ -1008,6 +1045,18 @@ body {
 .area.central {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)),
         url(../assets/imagens/bloodborne/bloodborne_yharnam.png);
+    background-size: cover;
+}
+
+.area.floresta {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)),
+        url(../assets/imagens/bloodborne/bloodborne_cardfloresta.jpg);
+    background-size: cover;
+}
+
+.area.pthumeru {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)),
+        url(../assets/imagens/bloodborne/bloodborne_pthumeru.png);
     background-size: cover;
 }
 

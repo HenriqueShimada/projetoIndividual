@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+        <div class="navBloodborne">
+        <div class="discernimento">
+            <div id="div_discernimento"></div>
+            <img src="./assets/imagens/bloodborne/bloodborne_discernimento.png" alt="">
+        </div>
+    </div>
+
+    <div class="yharnam yahargul">
+        <h2>Yahar'gul</h2>
+        <div class="container">
+            <p class="descricaoJogo">
+                Yahar'gul é uma vila oculta e corrompida por rituais sangrentos, acessada após eventos cruciais em
+                Yharnam. Ela representa o ápice do delírio cósmico, revelada somente após uma virada no mundo — quando a
+                percepção do jogador se expande com discernimento suficiente. Suas construções tortas e escadarias sem
+                lógica desafiam a arquitetura convencional, revelando um lugar onde o tempo parece repetitivo e a
+                loucura é parte da paisagem. Ao fundo, cânticos profanos e o sino constante das donzelas ritualistas
+                ecoam, enquanto figuras humanas são sacrificadas ou mantidas como oferendas. É uma janela grotesca para
+                o tipo de transcendência que a Escola Mensis busca.
+            </p>
+        </div>
+    </div>
+
+    <div class="mecanica">
+        <h2>Ambientação</h2>
+        <div class="container">
+            <div>
+                <img src="./assets/imagens/bloodborne/bloodborne_yahargul2.png">
+                <img src="./assets/imagens/bloodborne/bloodborne_yahargul3.png">
+            </div>
+            <p>
+                A iluminação é composta por tochas e relâmpagos de energia arcanas que brilham nas paredes. Há uma
+                sensação constante de repetição: as estruturas se assemelham demais entre si, o que reforça a
+                ideia de um looping temporal, de que algo ali acontece continuamente em uma espiral decadente. Yahar'gul
+                é o ápice da arrogância humana frente ao desconhecido. Não é apenas uma vila amaldiçoada — é um altar
+                demente erguido para os Eminentes.
+            </p>
+        </div>
+    </div>
+
+    <div class="mecanica">
+        <h2>Inimigos</h2>
+        <div class="container">
+
+
+            <p>
+                Em Yahar'gul, os inimigos não são perturbadores. Cultistas encapuzados, portando sinos e lanternas,
+                invocam caçadores espectrais e crias do além. Criaturas deformadas, fruto de experiências fracassadas
+                com os Eminentes, vagam pelos corredores, como os gigantes com carne esticada e as aberrações amarradas
+                com pregos. Os porcos inflados e as mulheres do sino funcionam como peças-chave nos rituais e podem se
+                tornar ameaças graves se ignoradas.
+            </p>
+            <div>
+                <img src="./assets/imagens/bloodborne/bloodborne_sino.png">
+                <img src="./assets/imagens/bloodborne/bloodborne_carne.png">
+            </div>
+        </div>
+    </div>
+
+    <div class="mecanica">
+        <h2>O Renascido</h2>
+        <div class="container">
+
+            <div>
+                <img src="./assets/imagens/bloodborne/bloodborne_renascido.jpg">
+                <img src="./assets/imagens/bloodborne/bloodborne_renascido2.png">
+            </div>
+
+            <div class="coluna">
+                <p>
+                    O Renascido é uma massa ambulante de carne, formada por cadáveres fundidos por rituais da Escola
+                    Mensis. Ele é o símbolo máximo do horror corporal de Yahar'gul, um ser sem identidade, sem mente,
+                    criado com o único propósito de transcender. A batalha acontece em um cemitério profanado, cercado
+                    por lápides e cadáveres empilhados. Mesmo sendo uma criação fracassada, o Renascido representa a
+                    tentativa desesperada de manipular os Eminentes sem compreendê-los — e paga o preço com sua forma e
+                    sofrimento eternos.
+
+                </p>
+                                 <br><br><br><br>
+                        <button class="botao" onclick="derrotar()">Derrotar</button>
+
+            </div>
+        </div>
+    </div>
+
+        <div class="mecanica">
+        <h2>Escola de Mensis</h2>
+        <div class="container">
+
+
+            <p>
+            A Escola Mensis usa Yahar'gul como o centro de seus rituais mais profanos, buscando transcender a carne humana e alcançar a iluminação por meio do contato com os Eminentes. Corpos estão por toda parte: presos, torturados ou empilhados em massa como oferendas para essas entidades superiores. A presença de Amygdalas — grandes criaturas invisíveis que se tornam visíveis com discernimento — revela quevela sempre estiveram ali, observando, inalcançáveis e indiferentes. 
+
+            </p>
+            <div>
+                <img src="./assets/imagens/bloodborne/bloodborne_micolash.png">
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
+
+<script>
+
+    var discernimento = parseInt(sessionStorage.getItem('discernimento')) || 0;
+    div_discernimento.innerHTML = discernimento;
+
+    function derrotar() {
+        if (discernimento >= 13) {
+            return
+        } else {
+            discernimento += 2;
+            div_discernimento.innerHTML = discernimento;
+            sessionStorage.setItem('discernimento', discernimento);
+        }
+    }
+
+</script>

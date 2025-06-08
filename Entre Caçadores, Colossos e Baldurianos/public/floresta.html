@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <div class="navBloodborne">
+        <div class="discernimento">
+            <div id="div_discernimento"></div>
+            <img src="./assets/imagens/bloodborne/bloodborne_discernimento.png" alt="">
+        </div>
+    </div>
+
+
+    <div class="yharnam floresta">
+        <h2>Floresta Proibida</h2>
+        <div class="container">
+            <p class="descricaoJogo">
+                A Floresta Proibida é um vasto e enigmático território que se estende além da Catedral, envolto por
+                névoa e esquecido pelo tempo. Originalmente um segredo guardado pelos estudiosos de Byrgenwerth, a
+                floresta foi selada por boas razões: ela abriga os resquícios de rituais antigos, abominações humanas e
+                a corrupção espalhada pelo sangue. É um labirinto natural onde o silêncio é quebrado apenas por
+                sussurros, armadilhas e a presença constante da insanidade. O local representa a transição entre a busca
+                pelo conhecimento e a perda completa do controle sobre ele.
+            </p>
+        </div>
+    </div>
+
+    <div class="mecanica">
+        <h2>Inimigos</h2>
+        <div class="container">
+            <div>
+                <img src="./assets/imagens/bloodborne/bloodborne_floresta3.png">
+                <img src="./assets/imagens/bloodborne/bloodborne_floresta4.png">
+            </div>
+            <p>
+                A Floresta Proibida é um dos caminhos mais traiçoeiros de Yharnam, levando os caçadores até Byrgenwerth.
+                É um território esquecido, cheio de trilhas sinuosas e nevoeiras densas. A vegetação é alta, cobrindo
+                armadilhas brutais escondidas no solo ou penduradas entre árvores. A estrutura do lugar torna fácil se
+                perder — com bifurcações, atalhos escondidos e emboscadas frequentes.
+
+            </p>
+        </div>
+    </div>
+
+    <div class="mecanica">
+        <h2>Inimigos</h2>
+        <div class="container">
+            <p>
+                A floresta é habitada por inimigos tão variados quanto brutais. Entre os mais perigosos estão os antigos
+                habitantes enlouquecidos, portando armas improvisadas e um ódio fervoroso. Há serpentes gigantes que
+                brotam do chão — algumas fundidas a corpos humanos — e variantes colossais que protegem os caminhos mais
+                profundos.
+            </p>
+
+            <div>
+                <img src="./assets/imagens/bloodborne/bloodborne_cobra.png">
+                <img src="./assets/imagens/bloodborne/bloodborne_cobra2.png">
+
+                <br><br><br><br>
+                <button class="botao" onclick="derrotar()">Derrotar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="mecanica">
+        <h2>Boss: Sombra de Yharnam</h2>
+        <div class="container">
+            <div>
+                <img src="./assets/imagens/bloodborne/bloodborne_sombra.png">
+                <img src="./assets/imagens/bloodborne/bloodborne_sombra2.png">
+            </div>
+            <div class="coluna">
+                <p>
+                    As Sombras de Yharnam são três figuras encapuzadas que simbolizam o fanatismo cego e a devoção aos
+                    Eminentes. Ágeis, coordenadas e letais, elas realizam rituais sombrios que antecedem o contato com a
+                    presença cósmica adormecida. Sua derrota é o último obstáculo antes de alcançar Byrgenwerth.
+                </p>
+                 <br><br><br><br>
+                        <button class="botao" onclick="derrotar()">Derrotar</button>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+
+
+    var discernimento = parseInt(sessionStorage.getItem('discernimento')) || 0;
+    div_discernimento.innerHTML = discernimento;
+
+    function derrotar() {
+        if (discernimento >= 7) {
+            return
+        } else {
+            discernimento += 2;
+            div_discernimento.innerHTML = discernimento;
+            sessionStorage.setItem('discernimento', discernimento);
+        }
+    }
+
+</script>
