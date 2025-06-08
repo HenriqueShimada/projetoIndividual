@@ -12,26 +12,47 @@
 <body>
 
 
-<div class="conteudo">
-  <div class="graficos">
-    Histórico de pontos:
-    <canvas id="myChart1" class="grafico"></canvas>
+  <div class="conteudo">
+    <div class="graficos">
+      Histórico de pontos:
+      <canvas id="myChart1" class="grafico"></canvas>
+    </div>
+
+    <div class="kpi">
+      <div>
+        Acertos: <span id="qtdAcerto">0</span>
+      </div>
+      <div>
+        Erros: <span id="qtdErro">0</span>
+      </div>
+      <div>
+        Maior pontuação: <span id="qtdPontuacao">0</span>
+      </div>
+      <div>
+        Conquistas:
+        <div id="container">
+          <div id="conquista-2" class="conquista ganho epica">Diálogo Secreto com Gehrman</div>
+          <div id="conquista-4" class="conquista ganho epica">Clímax de Laurence</div>
+          <div id="conquista-5" class="conquista ganho epica">Clímax de Ludwig</div>
+
+          <div id="conquista-1" class="conquista ganho rara">Conversar com a Boneca</div>
+          <div id="conquista-3" class="conquista ganho rara">Derrotar todos os chefes</div>
+          
+          <div id="conquista-6" class="conquista ganho comum">Cleric Beast</div>
+          <div id="conquista-7" class="conquista ganho comum">Father Gascoigne</div>
+          <div id="conquista-8" class="conquista ganho comum">Fera Sedenta de Sangue</div>
+          <div id="conquista-9" class="conquista ganho comum">Vigário Amelia</div>
+          <div id="conquista-10" class="conquista ganho comum">Shadow of Yharnam</div>
+          <div id="conquista-11" class="conquista ganho comum">Rom</div>
+          <div id="conquista-12" class="conquista ganho comum">O Renascido</div>
+          <div id="conquista-13" class="conquista ganho comum">Micolash</div>
+          <div id="conquista-14" class="conquista ganho comum">Mergo</div>
+          <div id="conquista-15" class="conquista ganho comum">Ludwig, the Accursed</div>
+          <div id="conquista-16" class="conquista ganho comum">Laurence, the First Vicar</div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="kpi">
-    <div>
-      Acertos: <span id="qtdAcerto">0</span>
-    </div>
-    <div>
-      Erros: <span id="qtdErro">0</span>
-    </div>
-    <div>
-      Maior pontuação: <span id="qtdPontuacao">0</span>
-    </div>
-    <div>
-      Conquistas:
-    </div>
-  </div>
-</div>
 
 </body>
 
@@ -42,36 +63,36 @@
   const chart1 = document.getElementById('myChart1');
 
   async function obterGraficos() {
-  
+
     const resposta = await fetch(`/dashboard/obterGraficos/${id}`)
 
-    if(resposta.ok) {
+    if (resposta.ok) {
       const dados = await resposta.json()
       console.log(dados)
       console.log(`Length: ${dados.length}`)
-  
+
       const partida = []
       const pontuacao = []
-  
+
       let lista1 = ""
       let lista2 = ""
-  
-  
-      dados.forEach(function(item, indice) {
+
+
+      dados.forEach(function (item, indice) {
         // partida.push(item.pontuacao)
         // pontuacao.push(item.pontuacao)
         partida.push(`Partida ${indice + 1}`)
         pontuacao.push(item.pontuacao)
       });
-  
+
       // for(let i = 0; i < dados.length; i++) {
       //   partida.push(`Partida ${i+1}`)
       //   pontuacao.push( dados[i].pontuacao)
       // }
-  
+
       console.log(`Partida: ${partida}`)
       console.log(`Pontuação: ${pontuacao}`)
-  
+
       new Chart(chart1, {
         type: 'line',
         data: {
@@ -87,7 +108,7 @@
           scales: {
             y: {
               beginAtZero: true
-              
+
             }
           }
         }
@@ -97,79 +118,79 @@
       console.log('Erro na requisição de dados!')
     }
 
-  
+
   }
 
 
 
-window.addEventListener("load", function(event) {
-  carregarAcertos(id);
-  carregarErros(id);
-  carregarPontuacao(id);
-  obterGraficos();
-})
+  window.addEventListener("load", function (event) {
+    carregarAcertos(id);
+    carregarErros(id);
+    carregarPontuacao(id);
+    obterGraficos();
+  })
 
 
-  function carregarAcertos(id){
-    fetch(`/dashboard/obterAcertos/${id}`).then(function (acertos){
+  function carregarAcertos(id) {
+    fetch(`/dashboard/obterAcertos/${id}`).then(function (acertos) {
       if (acertos.ok) {
-        acertos.json().then(function (acertosUsuario){
+        acertos.json().then(function (acertosUsuario) {
           console.log(JSON.stringify(acertosUsuario[0].acertos))
           exibirAcertos(acertosUsuario)
         })
-      }else{
+      } else {
         console.log('deu ruim')
       }
     })
-    .catch(erro => console.error("Erro ao pegar os acertos: ", erro));
+      .catch(erro => console.error("Erro ao pegar os acertos: ", erro));
   }
 
-  function exibirAcertos(acertosUsuario){
-          const spanAcerto = document.getElementById("qtdAcerto");
-      
-        spanAcerto.textContent = acertosUsuario[0].acertos
+  function exibirAcertos(acertosUsuario) {
+    const spanAcerto = document.getElementById("qtdAcerto");
+
+    spanAcerto.textContent = acertosUsuario[0].acertos
   }
 
 
-  
-  function carregarErros(id){
-    fetch(`/dashboard/obterErros/${id}`).then(function (erros){
+
+  function carregarErros(id) {
+    fetch(`/dashboard/obterErros/${id}`).then(function (erros) {
       if (erros.ok) {
-        erros.json().then(function (errosUsuario){
+        erros.json().then(function (errosUsuario) {
           console.log(JSON.stringify(errosUsuario[0].erros))
           exibirErros(errosUsuario)
         })
-      }else{
+      } else {
         console.log('deu ruim')
       }
     })
-    .catch(erro => console.error("Erro ao pegar os erros: ", erro));
+      .catch(erro => console.error("Erro ao pegar os erros: ", erro));
   }
 
-  function exibirErros(errosUsuario){
-          const spanAcerto = document.getElementById("qtdErro");
-      
-        spanAcerto.textContent = errosUsuario[0].erros
+  function exibirErros(errosUsuario) {
+    const spanAcerto = document.getElementById("qtdErro");
+
+    spanAcerto.textContent = errosUsuario[0].erros
   }
 
-    function carregarPontuacao(id){
-    fetch(`/dashboard/obterPontuacao/${id}`).then(function (pontuacao){
+  function carregarPontuacao(id) {
+    fetch(`/dashboard/obterPontuacao/${id}`).then(function (pontuacao) {
       if (pontuacao.ok) {
-        pontuacao.json().then(function (pontuacaoUsuario){
+        pontuacao.json().then(function (pontuacaoUsuario) {
           console.log(JSON.stringify(pontuacaoUsuario[0].pontuacao))
           exibirPontuacao(pontuacaoUsuario)
         })
-      }else{
+      } else {
         console.log('deu ruim')
       }
     })
-    .catch(erro => console.error("Erro ao pegar a pontuacao: ", erro));
+      .catch(erro => console.error("Erro ao pegar a pontuacao: ", erro));
   }
 
-  function exibirPontuacao(pontuacaoUsuario){
-          const spanAcerto = document.getElementById("qtdPontuacao");
-      
-        spanAcerto.textContent = pontuacaoUsuario[0].pontuacao
+  function exibirPontuacao(pontuacaoUsuario) {
+    const spanAcerto = document.getElementById("qtdPontuacao");
+
+    spanAcerto.textContent = pontuacaoUsuario[0].pontuacao
   }
 
 

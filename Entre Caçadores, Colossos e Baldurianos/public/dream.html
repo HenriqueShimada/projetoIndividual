@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sonho do caçador</title>
     <link rel="stylesheet" href="./css/style.css">
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 
 <body class="pgBloodborne">
@@ -67,7 +67,7 @@
                         type="audio/mp3">
                 </audio>
 
-                   <audio id="gehrman2">
+                <audio id="gehrman2">
                     <source src="./assets/audios//Bloodborne ： Diálogo do sonho de Gehrman (Pt br).mp3"
                         type="audio/mp3">
                 </audio>
@@ -161,9 +161,11 @@
 </body>
 
 </html>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
 <script>
 
+    const id = Number(sessionStorage.ID_USUARIO);
     var discernimento = parseInt(sessionStorage.getItem('discernimento')) || 0;
     div_discernimento.innerHTML = discernimento;
 
@@ -185,18 +187,31 @@
     }
 
 
-    function aparecerArma() {
-        if (temArma > 0) {
-            document.querySelector('.escolherArma').style.display = 'none';
-        }
-    }
-
 
     function conversar() {
 
         if (discernimento > 0) {
             voz3.currentTime = 0;
             voz3.play();
+
+            fetch(`/conquista/registrar/${id}`, {
+                method: 'POST',
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    idConquista: 1
+                })
+            }).then(resposta => {
+                if (resposta.ok) {
+                    console.log("Conquista registrada");
+                }
+            });
+            Toastify({
+                text: "Conquista desbloqueada!",
+                duration: 3000,
+                style: {
+                    background: "linear-gradient(to right, #004e92, #000428)"
+                },
+            }).showToast();
         }
 
         else {
@@ -211,9 +226,28 @@
         if (discernimento < 6) {
             voz4.currentTime = 0;
             voz4.play();
-        }else{
+        } else {
             voz5.currentTime = 0;
             voz5.play();
+
+            fetch(`/conquista/registrar/${id}`, {
+                method: 'POST',
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    idConquista: 2
+                })
+            }).then(resposta => {
+                if (resposta.ok) {
+                    console.log("Conquista registrada");
+                }
+            });
+            Toastify({
+                text: "Conquista desbloqueada!",
+                duration: 3000,
+                style: {
+                    background: "linear-gradient(to right, #5f0a87, #a4508b)"
+                },
+            }).showToast();
         }
 
 
