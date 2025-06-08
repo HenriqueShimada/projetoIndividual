@@ -23,6 +23,7 @@ var aquariosRouter = require("./src/routes/aquarios");
 var empresasRouter = require("./src/routes/empresas");
 var quizRouter = require("./src/routes/quiz");
 var dashboardRouter = require("./src/routes/dashboard");
+var conquistaRouter = require("./src/routes/conquista");
 
 
 app.use(express.json());
@@ -39,6 +40,7 @@ app.use("/aquarios", aquariosRouter);
 app.use("/empresas", empresasRouter);
 app.use("/quiz", quizRouter);
 app.use("/dashboard", dashboardRouter);
+app.use("/conquista", conquistaRouter);
 
 
 app.listen(PORTA_APP, function () {
