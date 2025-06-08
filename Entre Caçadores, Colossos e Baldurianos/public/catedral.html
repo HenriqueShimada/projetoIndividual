@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <div class="navBloodborne">
+        <div class="discernimento">
+            <div id="div_discernimento"></div>
+            <img src="./assets/imagens/bloodborne/bloodborne_discernimento.png" alt="">
+        </div>
+    </div>
+
+
+    <div class="conteudo">
+
+        <div class="yharnam catedral">
+            <h2>Área da Catedral</h2>
+            <div class="container">
+
+                <p class="descricaoJogo">A Área da Catedral marca uma mudança no ritmo da caçada. Após os becos
+                    estreitos de Yharnam, o jogador encontra corredores amplos, torres altas e templos cobertos por uma
+                    estranha sensação de reverência. Sede da Igreja da Cura, o local esconde segredos antigos e a
+                    corrupção do sangue em sua forma mais sagrada. Aqui, fé e loucura se misturam.
+                </p>
+
+            </div>
+        </div>
+
+        <div class="mecanica">
+            <h2>Capela de Oedon</h2>
+            <div class="container">
+
+                <div>
+                    <img src="./assets/imagens/bloodborne/bloodborne_capela.png">
+                    <img src="./assets/imagens/bloodborne/bloodborne_oedondweller.png">
+                </div>
+
+                <p> A Capela de Oedon é o primeiro refúgio após a batalha contra Padre Gascoigne. Localizada no coração
+                    da Área da Catedral, ela funciona como ponto de repouso. É possível enviar sobreviventes para ali —
+                    mas será mesmo um lugar seguro? O velho que cuida da capela parece gentil, mas algo nele escapa da
+                    normalidade. A música ambiente, as estátuas quebradas e a ausência de qualquer símbolo de proteção
+                    genuína fazem da Capela um lugar inquietante, mesmo sem inimigos à vista.
+                </p>
+
+
+
+            </div>
+
+        </div>
+
+        <div class="mecanica">
+            <h2>Inimigos</h2>
+            <div class="container">
+
+                <p>Os arredores da Catedral são patrulhados por fanáticos da Igreja da Cura: homens com vestes
+                    eclesiásticas armados com incensários flamejantes, gigantes envoltos em correntes que vagam
+                    lentamente e criaturas deformadas que lembram fiéis corrompidos pelo sangue. O tom muda sutilmente —
+                    o grotesco se mistura ao sagrado, como se a devoção da cidade tivesse dado origem a aberrações
+                    religiosas. A dificuldade aumenta, exigindo mais preparo e atenção aos padrões de ataque dos
+                    inimigos, que agora lutam com mais estratégia e brutalidade.</p>
+
+
+                <div>
+                    <img src="./assets/imagens/bloodborne/bloodborne_servente.png">
+                    <img src="./assets/imagens/bloodborne/bloodborne_gigante.png">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="mecanica">
+            <h2>Vigária Amelia</h2>
+            <div class="container">
+
+                <div>
+                    <img src="./assets/imagens/bloodborne/bloodborne_amelia.png">
+                    <img src="./assets/imagens/bloodborne/bloodborne_amelia2.png">
+                </div>
+
+                <div class="coluna">
+                    <p>Ao subir pelas escadarias da Catedral Superior, o caçador encontra Vigário Amelia ajoelhada
+                        diante de
+                        um altar. Ela murmura preces desesperadas, tentando se agarrar às palavras de Laurence, fundador
+                        da
+                        Igreja da Cura. Sua súplica é interrompida por uma horrível transformação: seu corpo se expande,
+                        seus ossos se rompem, e ela se torna uma fera gigantesca, símbolo do destino de todos os que se
+                        afogam no sangue. A queda de Amelia marca uma ruptura entre fé e razão, mostrando que nem mesmo
+                        os
+                        mais devotos escapam da corrupção.</p>
+                    <br><br><br><br>
+
+                    <audio id="fera">
+                        <source src="./assets/audios/Cleric Beast roar (clear).mp3">
+                    </audio>
+
+
+                    <button class="botao" onclick="derrotar()">Derrotar</button>
+
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="mecanica">
+            <h2>Laurence e Willem</h2>
+            <div class="container">
+
+                <div class="coluna">
+                    <p>Após derrotar Amelia, uma cena oculta é ativada ao interagir com o altar. Nela, Laurence e Mestre
+                        Willem — antigos aliados da Academia de Byrgenwerth — discutem os rumos da evolução humana.
+                        Willem
+                        defende a evolução através de conhecimento, com mais olhos, rejeitando a fé cega no sangue
+                        antigo.
+                        Laurence, ao contrário, abraça essa prática e funda a Igreja da Cura. Nesse ponto, notamos que a
+                        decadencia atual foi formada pela ambição humana.</p>
+
+                    <br><br>
+
+                    <button class="botao" onclick="tocar()">Tocar</button>
+
+                    <audio id="willem">
+                        <source src="./assets/audios/Bloodborne： Tema o Sangue Antigo.mp3" type="audio/mp3">
+                    </audio>
+
+                </div>
+
+                <div>
+                    <img src="./assets/imagens/bloodborne/bloodborne_craanio_laurence.jpg">
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+<script>
+
+    var discernimento = parseInt(sessionStorage.getItem('discernimento')) || 0;
+    div_discernimento.innerHTML = discernimento;
+
+    let derrotou = false;
+
+    const voz1 = document.getElementById("fera");
+    const voz2 = document.getElementById("willem");
+
+    function derrotar() {
+        voz1.currentTime = 0;
+        voz1.play();
+
+        discernimento++;
+        div_discernimento.innerHTML = discernimento;
+
+
+        if (discernimento >= 3) {
+            return
+        }
+
+        discernimento += 2;
+        div_discernimento.innerHTML = discernimento;
+        sessionStorage.setItem('discernimento', discernimento);
+    }
+
+    function tocar() {
+        voz2.currentTime = 0;
+        voz2.play();
+
+        discernimento++;
+        div_discernimento.innerHTML = discernimento;
+
+
+        if (discernimento >= 4) {
+            return
+        }
+        else {
+            discernimento++;
+            div_discernimento.innerHTML = discernimento;
+            sessionStorage.setItem('discernimento', discernimento);
+        }
+    }
+
+
+
+</script>

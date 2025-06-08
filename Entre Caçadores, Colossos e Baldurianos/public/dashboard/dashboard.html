@@ -22,10 +22,10 @@
       Acertos: <span id="qtdAcerto">0</span>
     </div>
     <div>
-      Erros:
+      Erros: <span id="qtdErro">0</span>
     </div>
     <div>
-      Maior pontuação:
+      Maior pontuação: <span id="qtdPontuacao">0</span>
     </div>
     <div>
       Conquistas:
@@ -41,30 +41,72 @@
   const id = Number(sessionStorage.ID_USUARIO);
   const chart1 = document.getElementById('myChart1');
 
-  new Chart(chart1, {
-    type: 'line',
-    data: {
-      labels: ['12:00	', '13:00', '14:00', '15:00	', '16:00', '17:00', '18:00'],
-      datasets: [{
-        label: 'Histórico de Pontos',
-        data: [0, 1, 2, 3, 6, 9, 7],
-        backgroundColor: 'rgb(255,99,132)',
-        borderColor: 'rgb(255,99,132)'
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-          
+  async function obterGraficos() {
+  
+    const resposta = await fetch(`/dashboard/obterGraficos/${id}`)
+
+    if(resposta.ok) {
+      const dados = await resposta.json()
+      console.log(dados)
+      console.log(`Length: ${dados.length}`)
+  
+      const partida = []
+      const pontuacao = []
+  
+      let lista1 = ""
+      let lista2 = ""
+  
+  
+      dados.forEach(function(item, indice) {
+        // partida.push(item.pontuacao)
+        // pontuacao.push(item.pontuacao)
+        partida.push(`Partida ${indice + 1}`)
+        pontuacao.push(item.pontuacao)
+      });
+  
+      // for(let i = 0; i < dados.length; i++) {
+      //   partida.push(`Partida ${i+1}`)
+      //   pontuacao.push( dados[i].pontuacao)
+      // }
+  
+      console.log(`Partida: ${partida}`)
+      console.log(`Pontuação: ${pontuacao}`)
+  
+      new Chart(chart1, {
+        type: 'line',
+        data: {
+          labels: partida,
+          datasets: [{
+            label: 'Histórico de Pontos',
+            data: pontuacao,
+            backgroundColor: 'rgb(255,99,132)',
+            borderColor: 'rgb(255,99,132)'
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+              
+            }
+          }
         }
-      }
+      });
+
+    } else {
+      console.log('Erro na requisição de dados!')
     }
-  });
+
+  
+  }
+
 
 
 window.addEventListener("load", function(event) {
   carregarAcertos(id);
+  carregarErros(id);
+  carregarPontuacao(id);
+  obterGraficos();
 })
 
 
@@ -86,6 +128,48 @@ window.addEventListener("load", function(event) {
           const spanAcerto = document.getElementById("qtdAcerto");
       
         spanAcerto.textContent = acertosUsuario[0].acertos
+  }
+
+
+  
+  function carregarErros(id){
+    fetch(`/dashboard/obterErros/${id}`).then(function (erros){
+      if (erros.ok) {
+        erros.json().then(function (errosUsuario){
+          console.log(JSON.stringify(errosUsuario[0].erros))
+          exibirErros(errosUsuario)
+        })
+      }else{
+        console.log('deu ruim')
+      }
+    })
+    .catch(erro => console.error("Erro ao pegar os erros: ", erro));
+  }
+
+  function exibirErros(errosUsuario){
+          const spanAcerto = document.getElementById("qtdErro");
+      
+        spanAcerto.textContent = errosUsuario[0].erros
+  }
+
+    function carregarPontuacao(id){
+    fetch(`/dashboard/obterPontuacao/${id}`).then(function (pontuacao){
+      if (pontuacao.ok) {
+        pontuacao.json().then(function (pontuacaoUsuario){
+          console.log(JSON.stringify(pontuacaoUsuario[0].pontuacao))
+          exibirPontuacao(pontuacaoUsuario)
+        })
+      }else{
+        console.log('deu ruim')
+      }
+    })
+    .catch(erro => console.error("Erro ao pegar a pontuacao: ", erro));
+  }
+
+  function exibirPontuacao(pontuacaoUsuario){
+          const spanAcerto = document.getElementById("qtdPontuacao");
+      
+        spanAcerto.textContent = pontuacaoUsuario[0].pontuacao
   }
 
 

@@ -14,7 +14,7 @@
     <div class="navBloodborne">
         <div class="discernimento">
             <div id="div_discernimento"></div>
-            <img src="./imagens/bloodborne/bloodborne_discernimento.png" alt="">
+            <img src="./assets/imagens/bloodborne/bloodborne_discernimento.png" alt="">
         </div>
     </div>
 
@@ -47,13 +47,32 @@
                     <img src="./assets/imagens/bloodborne/bloodborne_gerhman2.png">
                 </div>
 
+                <div class="coluna">
+                    <p>Gehrman, o primeiro caçador que repousa neste sonho — ou está preso nele. Apesar de sua aparência
+                        frágil
+                        e
+                        sua voz cansada, ele guarda um longo passado e conhece bem o mundo fora desse universo onírico.
+                        Sua
+                        ligação com a Presença da Lua o mantém atado ao ciclo interminável da Caçada.
 
-                <p>Gehrman, o primeiro caçador que repousa neste sonho — ou está preso nele. Apesar de sua aparência frágil
-                    e
-                    sua voz cansada, ele guarda um longo passado e conhece bem o mundo fora desse universo onírico. Sua
-                    ligação com a Presença da Lua o mantém atado ao ciclo interminável da Caçada.
+                    </p>
+                    <br><br><br><br>
 
-                </p>
+                    <button class="botao" onclick="conversar2()">Coversar</button>
+
+                </div>
+
+                <audio id="gehrman">
+                    <source src="./assets/audios/Bloodborne™ - O sonho de Gehrman (Gerhman’s dream).mp3"
+                        type="audio/mp3">
+                </audio>
+
+                   <audio id="gehrman2">
+                    <source src="./assets/audios//Bloodborne ： Diálogo do sonho de Gehrman (Pt br).mp3"
+                        type="audio/mp3">
+                </audio>
+
+
 
             </div>
         </div>
@@ -66,6 +85,7 @@
                         guia o Caçador, ajuda a canalizar ecos de sangue e oferece ajuda entre as noites sangrentas. Sua
                         voz suave esconde segredos mais profundos do que aparenta.
                     </p>
+                    <br><br><br><br>
 
                     <button class="botao" onclick="conversar()">Coversar</button>
                     <div id="div_legenda2"></div>
@@ -77,6 +97,10 @@
                     ">
                     <img src="./assets/imagens/bloodborne/bloodborne_doll_gif2.gif">
                 </div>
+
+                <audio id="boneca">
+                    <source src="./assets/audios/Bloodborne： Diálogo da Boneca ＂Eu amo você＂.mp3" type="audio/mp3">
+                </audio>
 
             </div>
         </div>
@@ -145,6 +169,10 @@
 
     const voz1 = document.getElementById("mensageiro1");
     const voz2 = document.getElementById("mensageiro2");
+    const voz3 = document.getElementById("boneca");
+    const voz4 = document.getElementById("gehrman");
+    const voz5 = document.getElementById("gehrman2");
+
 
     const listaVoz = [voz1, voz2];
 
@@ -163,15 +191,12 @@
         }
     }
 
-    function tocarMusica() {
-        var musica = document.getElementById("musicaSonho");
-        musica.play();
-    }
 
     function conversar() {
 
         if (discernimento > 0) {
-            div_legenda2.innerHTML = "oiiii";
+            voz3.currentTime = 0;
+            voz3.play();
         }
 
         else {
@@ -182,15 +207,19 @@
         }
     }
 
-    function pegarArma() {
-        if (temArma >= 1) {
-            return
+    function conversar2() {
+        if (discernimento < 6) {
+            voz4.currentTime = 0;
+            voz4.play();
+        }else{
+            voz5.currentTime = 0;
+            voz5.play();
         }
 
-        temArma++;
-        localStorage.setItem('temArma', temArma);
-        aparecerArma();
+
     }
+
+
 
 
 </script>

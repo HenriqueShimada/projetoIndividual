@@ -11,6 +11,13 @@
 
 <body>
 
+    <div class="navBloodborne">
+        <div class="discernimento">
+            <div id="div_discernimento"></div>
+            <img src="./assets/imagens/bloodborne/bloodborne_discernimento.png" alt="">
+        </div>
+    </div>
+
     <div class="conteudo">
 
         <div class="yharnam">
@@ -27,77 +34,90 @@
 
             </div>
         </div>
-
-        <div class="janela">
+        <div class="mecanica">
+            <h2>Inimigos</h2>
             <div class="container">
 
-
-                <button class="botao" onclick="tocarMusica()">Bater na janela</button>
-            </div>
-        </div>
-
-        <div class="cidade">
-            <div class="fundoMascarado1"></div>
-            <div class="container">
-                <p class="descricaoJogo">Pelas ruas, os habitantes que restam já não são mais humanos — suas mentes
-                    consumidas pela praga transformaram-nos em feras deformadas, caçadores enlouquecidos e criaturas
-                    hostis que rondam em patrulhas desordenadas, armados com tochas, forquilhas e a fúria cega de quem
-                    perdeu tudo, menos o ódio. Cada esquina é uma armadilha silenciosa, onde a imprudência é rapidamente
-                    punida.</p>
-
-
-            </div>
-        </div>
-
-
-
-        <div class="padre">
-            <div class="fundoMascarado1"></div>
-            <div class="container">
-                <p class="descricaoJogo">Em meio às ruas de Yharnam, surge uma figura familiar, mas nada acolhedora.
-                    Armado e atento, Father Gascoigne é um caçador como você — ou, talvez, aquilo em que todo caçador
-                    inevitavelmente se torna.</p>
-
-                <button class="botao" onclick="tocarMusica()">atacar</button>
-            </div>
-        </div>
-
-        <div class="broche">
-            <div class="container">
-
-                <p class="descricaoJogo">Ao encontrar um corpo no mesmo local, um broche vermelho brilhante, familiar, é
-                    encontrado.</p>
-
-                <button class="botao" onclick="pegar()">Pegar item</button>
-            </div>
-        </div>
-
-        <div class="capela">
-            <div class="container">
-                      <p>A Capela de Oedon, um lugar amigável, onde as feras não são bem vindas, um
-                    lugar seguro para abrigar moradores onde ainda não está com a sanidade totalmente abalada.</p>
-                <div class="imagens">
-                    <img src="./assets/imagens/bloodborne/bloodborne_capela.png">
-                    <img src="./assets/imagens/bloodborne/bloodborne_capela.jpg">
+                <div>
+                    <img src="./assets/imagens/bloodborne/bloodborne_corvo.png">
+                    <img src="./assets/imagens/bloodborne/bloodborne_inimigos.png">
                 </div>
-          
+
+
+                <p> Os inimigos variam entre os habitantes enlouquecidos da cidade, como os caçadores bestiais, cães
+                    deformados e corvos grotescos. A atmosfera é intensificada pela trilha sonora sombria e os sussurros
+                    ao longe </p>
+
+                </p>
+
 
             </div>
         </div>
 
-        <div class="amelia">
+        <div class="mecanica ponte">
             <div class="fundoMascarado1"></div>
-            <div class="container">
-                <p class="descricaoJogo">A Capela de Oedon, um lugar amigável, onde as feras não são bem vindas, um
-                    lugar seguro para abrigar moradores onde ainda não está com a sanidade totalmente abalada.</p>
+            <div class="fundoMascarado2"></div>
 
-                <button class="botao" onclick="tocarMusica()">atacar</button>
+            <div class="container">
+                <h2>A Grande Ponte</h2>
+                <p class="descricaoJogo">O primeiro susto da maioria dos jogadores, a Grande Ponte é o local do primeiro
+                    boss opcional, onde, inesperadamente,a grande Fera Clerical te ataca.
+                    <br><br><br>
+
+                    <button onclick="atravessar()" class="botao">Atravessar</button>
+
+
+                    <audio id="cleric">
+                        <source src="./assets/audios/Cleric Beast roar (clear).mp3" type="audio/mp3">
+                    </audio>
+                </p>
+
+
+
             </div>
         </div>
 
 
+        <div class="mecanica">
+            <h2>Oedon</h2>
+            <div class="container">
 
+                <div>
+                    <img src="./assets/imagens/bloodborne/bloodborne_oedon.png">
+                    <img src="./assets/imagens/bloodborne/bloodborne_oedontomb.png">
+                </div>
 
+                <p>Oedon é um Grande sem forma física, cuja única manifestação ocorre através do sangue, o qual
+                    representa seu meio de influência sobre o mundo. Invisível e silencioso, ele é adorado em Yharnam
+                    como uma presença sagrada, ainda que nunca vista. A Tumba de Oedon, um cemitério envolto em névoa e
+                    sangue, serve como local de culto e palco de tragédias marcadas pela corrupção do sangue.</p>
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="mecanica">
+            <h2>Padre Gascoigne</h2>
+            <div class="container">
+
+                <p>Padre Gascoigne, o primeiro boss obrigatório, é um caçador experiente que, ao ser encontrado na Tumba
+                    de Oedon, já está à beira da loucura. Consumido pelo sangue e pela violência, ele se torna incapaz
+                    de distinguir humanos de bestas, acabando por se transformar em uma criatura monstruosa. Sua luta
+                    representa a queda inevitável dos caçadores, e sua tragédia pessoal reforça o horror silencioso que
+                    permeia Yharnam.</p>
+
+                </p>
+
+                <div>
+                    <img src="./assets/imagens/bloodborne/Bloodborne_gascoigne.png">
+                    <img src="./assets/imagens/bloodborne/bloodborne_gascoigne3.png">
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
 
@@ -107,6 +127,25 @@
 
 <script>
 
+    const cleric = document.getElementById("cleric");
+    var discernimento = parseInt(sessionStorage.getItem('discernimento')) || 0;
+    div_discernimento.innerHTML = discernimento;
 
+
+    function atravessar() {
+        cleric.currentTime = 0;
+        cleric.play();
+
+        document.querySelector('.fundoMascarado1').style.opacity = 0;
+        document.querySelector('.fundoMascarado2').style.opacity = 1;
+
+        if (discernimento >= 1) {
+            return
+        }else{
+        discernimento++;
+        div_discernimento.innerHTML = discernimento;
+        sessionStorage.setItem('discernimento', discernimento);
+        }
+    }
 
 </script>

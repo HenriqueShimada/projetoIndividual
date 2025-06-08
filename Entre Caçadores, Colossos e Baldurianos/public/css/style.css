@@ -523,6 +523,9 @@ body {
 .discernimento {
     display: flex;
     flex-direction: row;
+    position: absolute;
+    right: 0px;
+    color: #f0e6d2;
 }
 
 #div_discernimento {
@@ -532,6 +535,15 @@ body {
     justify-content: flex-end;
     font-size: 35px;
     margin-right: 15px;
+}
+
+.nav img {
+    display: flex;
+    height: 30px;
+    flex-direction: row;
+    margin-right: 60px;
+    margin-top: 60px;
+    filter: invert(1);
 }
 
 .navBloodborne img {
@@ -551,6 +563,60 @@ body {
     color: aliceblue;
 
 }
+
+.mecanica.ponte{
+    position: relative;
+    height: 750px;
+    width: 100%;
+    display: flex;
+}
+
+.mecanica.ponte .container{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.mecanica.ponte .container p{
+    width: 50%;
+}
+
+.mecanica.ponte .container h2{
+    width: 100%;
+    text-align: center;
+}
+
+.mecanica.ponte .container p button{
+    margin-left: 320px;
+}
+
+
+.mecanica.ponte .fundoMascarado1 {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url(../assets/imagens/bloodborne/Bloodborne-The-Great-Bridge.png);
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    opacity: 1;
+    transition: opacity 2s ease;
+    margin-top: 60px;
+}
+
+.mecanica.ponte .fundoMascarado2 {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url(../assets/imagens/bloodborne/bloodborne_cleric.jpg);
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 2s ease;
+    margin-top: 60px;
+}
+
 
 .introBlood .fundoMascarado1 {
     position: absolute;
@@ -771,6 +837,23 @@ body {
     background-size: cover;
     padding-top: 50px;
     background-position: top;
+}
+
+.yharnam.catedral{
+    background-image:linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)),  url(../assets/imagens/bloodborne/bloodborne_catedral.png);
+    background-position: bottom;
+    height: 670px;
+}
+
+.yharnam.antiga{
+    background-image:linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)),  url(../assets/imagens/bloodborne/bloodborne_antiga.png);
+    background-position: bottom;
+    height: 670px;
+}
+
+.yharnam h2{
+    width: 100%;
+    text-align: center;
 }
 
 .horror h2{

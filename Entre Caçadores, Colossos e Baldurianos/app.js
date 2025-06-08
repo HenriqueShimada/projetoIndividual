@@ -24,6 +24,7 @@ var empresasRouter = require("./src/routes/empresas");
 var quizRouter = require("./src/routes/quiz");
 var dashboardRouter = require("./src/routes/dashboard");
 
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
@@ -38,6 +39,7 @@ app.use("/aquarios", aquariosRouter);
 app.use("/empresas", empresasRouter);
 app.use("/quiz", quizRouter);
 app.use("/dashboard", dashboardRouter);
+
 
 app.listen(PORTA_APP, function () {
     console.log(`

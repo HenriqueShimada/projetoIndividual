@@ -28,6 +28,12 @@
             </li>
         </div>
 
+        <div class="discernimento">
+            <div id="div_discernimento"></div>
+            <img src="./assets/imagens/bloodborne/bloodborne_discernimento.png" alt="">
+        </div>
+    </div>
+
     </div>
 
     <div class="conteudo">
@@ -105,7 +111,7 @@
         <div class="areas">
             <h2>Principais Locais de Yharnam e Além</h2>
             <div class="divisao">
-                <div class="area central">
+                <div class="area central" onclick="central()">
                     <div class="container">
                         <h3>Yharnam Central</h3>
                         O coração de Yharnam, onde os primeiros passos do Caçador são dados. Ruas labirínticas,
@@ -126,7 +132,7 @@
             </div>
 
             <div class="divisao">
-                <div class="area catedral">
+                <div class="area catedral" onclick="catedral()">
                     <div class="container">
                         <h3>Catedral e o Bairro da Igreja</h3>
 
@@ -227,11 +233,24 @@
 
 <script>
 
+    var discernimento = parseInt(sessionStorage.getItem('discernimento')) || 0;
+    div_discernimento.innerHTML = discernimento;
+
 function iniciar(){
     window.location.href = "quiz.html";
 }
 function sonho(){
     window.location.href = "dream.html";
+
+}
+
+function central(){
+    window.location.href = "yharnam.html";
+
+}
+
+function catedral(){
+    window.location.href = "catedral.html";
 
 }
 
