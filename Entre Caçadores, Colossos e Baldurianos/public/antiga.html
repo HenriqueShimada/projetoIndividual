@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Document</title>
+    <title>Antiga Yharnam</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 
 <body>
 
     <div class="navBloodborne">
+        <a href="bloodborne.html">Voltar</a>
         <div class="discernimento">
             <div id="div_discernimento"></div>
             <img src="./assets/imagens/bloodborne/bloodborne_discernimento.png" alt="">
@@ -90,8 +92,11 @@
 
 </html>
 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
 <script>
 
+    const id = Number(sessionStorage.ID_USUARIO);
     var discernimento = parseInt(sessionStorage.getItem('discernimento')) || 0;
     div_discernimento.innerHTML = discernimento;
 
@@ -102,6 +107,26 @@
             discernimento++;
             div_discernimento.innerHTML = discernimento;
             sessionStorage.setItem('discernimento', discernimento);
+
+                fetch(`/conquista/registrar/${id}`, {
+                method: 'POST',
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    idConquista: 8
+                })
+            }).then(resposta => {
+                if (resposta.ok) {
+                    console.log("Conquista registrada");
+                }
+            });
+            Toastify({
+                text: "Conquista desbloqueada!",
+                duration: 3000,
+                style: {
+                    background: "linear-gradient(to right, #555, #888)"
+
+                },
+            }).showToast();
         }
     }
 

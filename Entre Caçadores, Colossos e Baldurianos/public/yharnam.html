@@ -4,14 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Yharnam</title>
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 
 <body>
 
     <div class="navBloodborne">
+        <a href="bloodborne.html">Voltar</a>
         <div class="discernimento">
             <div id="div_discernimento"></div>
             <img src="./assets/imagens/bloodborne/bloodborne_discernimento.png" alt="">
@@ -22,10 +23,10 @@
 
         <div class="yharnam">
             <div class="container">
-                <p class="descricaoJogo">Yharnam Central é onde a jornada em Bloodborne realmente começa. Uma cidade
+                <p class="descricaoJogo">Yharnam Central é onde a jornada em Bloodborne realmente começa, logo após acordar ca clínica de Yosefka. Uma cidade
                     silenciosa e opressiva, tomada pela névoa, pela decadência e pelo medo. Suas ruas estreitas e
-                    construções góticas criam um labirinto onde cada sombra parece esconder algo — ou alguém — à
-                    espreita. Não é apenas um cenário, mas um aviso: o mundo aqui é hostil, e sobreviver exige atenção,
+                    construções góticas criam um labirinto onde cada sombra parece esconder algo à
+                    espreita. Não é apenas um cenário, mas um aviso de que o é hostil, e que sobreviver não é uma benção,
                     coragem e adaptação. O jogador é lançado nesse ambiente sem garantias, aprendendo, aos poucos, que a
                     verdadeira ameaça não está apenas nas criaturas, mas na própria cidade que, viva ou morta, observa a
                     caçada acontecer.
@@ -124,9 +125,13 @@
 </body>
 
 </html>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+
 
 <script>
 
+    const id = Number(sessionStorage.ID_USUARIO);
     const cleric = document.getElementById("cleric");
     var discernimento = parseInt(sessionStorage.getItem('discernimento')) || 0;
     div_discernimento.innerHTML = discernimento;
@@ -141,10 +146,31 @@
 
         if (discernimento >= 1) {
             return
-        }else{
-        discernimento++;
-        div_discernimento.innerHTML = discernimento;
-        sessionStorage.setItem('discernimento', discernimento);
+        } else {
+            discernimento++;
+            div_discernimento.innerHTML = discernimento;
+            sessionStorage.setItem('discernimento', discernimento);
+
+
+            fetch(`/conquista/registrar/${id}`, {
+                method: 'POST',
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    idConquista: 6
+                })
+            }).then(resposta => {
+                if (resposta.ok) {
+                    console.log("Conquista registrada");
+                }
+            });
+            Toastify({
+                text: "Conquista desbloqueada!",
+                duration: 3000,
+                style: {
+                    background: "linear-gradient(to right, #555, #888)"
+
+                },
+            }).showToast();
         }
     }
 

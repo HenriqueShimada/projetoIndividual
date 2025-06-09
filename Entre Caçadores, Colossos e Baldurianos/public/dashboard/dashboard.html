@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Dashboard</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="../css/dashboards.css">
 </head>
@@ -12,47 +12,58 @@
 <body>
 
 
-  <div class="conteudo">
-    <div class="graficos">
-      Histórico de pontos:
-      <canvas id="myChart1" class="grafico"></canvas>
-    </div>
+  <div class="conteudo dashboard">
 
-    <div class="kpi">
-      <div>
-        Acertos: <span id="qtdAcerto">0</span>
-      </div>
-      <div>
-        Erros: <span id="qtdErro">0</span>
-      </div>
-      <div>
-        Maior pontuação: <span id="qtdPontuacao">0</span>
-      </div>
-      <div>
-        Conquistas:
-        <div id="container">
-          <div id="conquista-2" class="conquista ganho epica">Diálogo Secreto com Gehrman</div>
-          <div id="conquista-4" class="conquista ganho epica">Clímax de Laurence</div>
-          <div id="conquista-5" class="conquista ganho epica">Clímax de Ludwig</div>
+    <h1>Perfil</h1>
 
-          <div id="conquista-1" class="conquista ganho rara">Conversar com a Boneca</div>
-          <div id="conquista-3" class="conquista ganho rara">Derrotar todos os chefes</div>
-          
-          <div id="conquista-6" class="conquista ganho comum">Cleric Beast</div>
-          <div id="conquista-7" class="conquista ganho comum">Father Gascoigne</div>
-          <div id="conquista-8" class="conquista ganho comum">Fera Sedenta de Sangue</div>
-          <div id="conquista-9" class="conquista ganho comum">Vigário Amelia</div>
-          <div id="conquista-10" class="conquista ganho comum">Shadow of Yharnam</div>
-          <div id="conquista-11" class="conquista ganho comum">Rom</div>
-          <div id="conquista-12" class="conquista ganho comum">O Renascido</div>
-          <div id="conquista-13" class="conquista ganho comum">Micolash</div>
-          <div id="conquista-14" class="conquista ganho comum">Mergo</div>
-          <div id="conquista-15" class="conquista ganho comum">Ludwig, the Accursed</div>
-          <div id="conquista-16" class="conquista ganho comum">Laurence, the First Vicar</div>
+  <a href="../bloodborne.html">Voltar à Página Bloodborne</a>
+
+    <div class="principal">
+      <div class="graficos">
+        <h2>Histórico de pontos:</h2>
+        <canvas id="myChart1" class="grafico"></canvas>
+      </div>
+
+      <div class="kpi">
+        <div>
+          <h2>Acertos:</h2> <span id="qtdAcerto">0</span>
+        </div>
+        <div>
+          <h2>Erros:</h2> <span id="qtdErro">0</span>
+        </div>
+        <div>
+          <h2>Maior pontuação:</h2> <span id="qtdPontuacao">0</span>
         </div>
       </div>
     </div>
+
+
+    <div class="conquista">
+      <h2>Conquistas:</h2>
+      <div id="container">
+        <div id="conquista-2" class="conquista ganho epica">Diálogo Secreto com Gehrman</div>
+        <div id="conquista-4" class="conquista ganho epica">Clímax de Laurence</div>
+        <div id="conquista-5" class="conquista ganho epica">Clímax de Ludwig</div>
+
+        <div id="conquista-1" class="conquista ganho rara">Conversar com a Boneca</div>
+        <div id="conquista-3" class="conquista ganho rara">Derrotar todos os chefes</div>
+
+        <div id="conquista-6" class="conquista ganho comum">Cleric Beast</div>
+        <div id="conquista-7" class="conquista ganho comum">Father Gascoigne</div>
+        <div id="conquista-8" class="conquista ganho comum">Fera Sedenta de Sangue</div>
+        <div id="conquista-9" class="conquista ganho comum">Vigário Amelia</div>
+        <div id="conquista-11" class="conquista ganho comum">Shadow of Yharnam</div>
+        <div id="conquista-12" class="conquista ganho comum">Rom</div>
+        <div id="conquista-13" class="conquista ganho comum">O Renascido</div>
+        <div id="conquista-14" class="conquista ganho comum">Micolash</div>
+        <div id="conquista-15" class="conquista ganho comum">Mergo</div>
+        <div id="conquista-16" class="conquista ganho comum">Ludwig, the Accursed</div>
+        <div id="conquista-17" class="conquista ganho comum">Laurence, the First Vicar</div>
+      </div>
+    </div>
   </div>
+
+
 
 </body>
 
@@ -127,9 +138,34 @@
     carregarAcertos(id);
     carregarErros(id);
     carregarPontuacao(id);
+    carregarConquistas(id);
     obterGraficos();
   })
 
+  function carregarConquistas(id) {
+    fetch(`/conquista/usuario/${id}`).then(function (conquistas) {
+      if (conquistas.ok) {
+        conquistas.json().then(conquistas => {
+          exibirConquistas(conquistas);
+        });
+      } else {
+        console.error("Erro ao buscar conquistas do usuário");
+      }
+    })
+      .catch(erro => {
+        console.error("Erro na requisição de conquistas:", erro);
+      });
+  }
+
+  function exibirConquistas(conquistas) {
+    conquistas.forEach(conquista => {
+      const idConquista = `conquista-${conquista.fkConquista}`;
+      const divConquista = document.getElementById(idConquista);
+      if (divConquista) {
+        divConquista.classList.remove("ganho");
+      }
+    });
+  }
 
   function carregarAcertos(id) {
     fetch(`/dashboard/obterAcertos/${id}`).then(function (acertos) {
@@ -150,8 +186,6 @@
 
     spanAcerto.textContent = acertosUsuario[0].acertos
   }
-
-
 
   function carregarErros(id) {
     fetch(`/dashboard/obterErros/${id}`).then(function (erros) {

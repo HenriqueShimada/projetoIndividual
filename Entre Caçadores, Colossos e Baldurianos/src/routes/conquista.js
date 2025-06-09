@@ -6,4 +6,8 @@ router.post("/registrar/:idUsuario", function (req, res) {
     conquistaController.registrarConquista(req, res);
 });
 
+router.get("/usuario/:idUsuario", (req, res) => {
+    conquistaController.listarConquista(req, res);
+});
+
 module.exports = router;

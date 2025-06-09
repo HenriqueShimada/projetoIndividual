@@ -42,10 +42,14 @@ body {
     margin-top: 20px;
 }
 
-.nav hr {
-    width: 900px;
+.navBloodborne a{
+    text-decoration: none;
+    color: #f0e6d2;
+    position: absolute;
+    margin-top: 36px;
+    left: 5%;
+    font-size: 28px;
 }
-
 
 .agradecimento {
     color: #f0e6d2;
@@ -1323,5 +1327,9 @@ body {
 .clinica .container p{
     margin: 0px 80px 0px 80px;
 }
+
+/*dashboard*/
+
+
 
 

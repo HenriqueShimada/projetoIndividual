@@ -4,13 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pesadelo do Caçador</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
 </head>
 
 <body>
 
     <div class="navBloodborne">
+        <a href="bloodborne.html">Voltar</a>
         <div class="discernimento">
             <div id="div_discernimento"></div>
             <img src="./assets/imagens/bloodborne/bloodborne_discernimento.png" alt="">
@@ -131,9 +134,11 @@
 </body>
 
 </html>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
 <script>
 
+    const id = Number(sessionStorage.ID_USUARIO);
     var discernimento = parseInt(sessionStorage.getItem('discernimento')) || 0;
     div_discernimento.innerHTML = discernimento;
 
@@ -165,6 +170,26 @@
             discernimento += 2;
             div_discernimento.innerHTML = discernimento;
             sessionStorage.setItem('discernimento', discernimento);
+
+                        fetch(`/conquista/registrar/${id}`, {
+                method: 'POST',
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    idConquista: 17
+                })
+            }).then(resposta => {
+                if (resposta.ok) {
+                    console.log("Conquista registrada");
+                }
+            });
+            Toastify({
+                text: "Conquista desbloqueada!",
+                duration: 3000,
+                style: {
+                    background: "linear-gradient(to right, #555, #888)"
+
+                },
+            }).showToast();
         }
     }
 
@@ -172,6 +197,25 @@
     function fase2() {
         pararMusicas();
         laurence2.play();
+
+            fetch(`/conquista/registrar/${id}`, {
+                method: 'POST',
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    idConquista: 4
+                })
+            }).then(resposta => {
+                if (resposta.ok) {
+                    console.log("Conquista registrada");
+                }
+            });
+            Toastify({
+                text: "Conquista desbloqueada!",
+                duration: 3000,
+                style: {
+ background: "linear-gradient(to right, #5f0a87, #a4508b)"
+                },
+            }).showToast();
     }
 
 
@@ -183,6 +227,26 @@
             discernimento += 3;
             div_discernimento.innerHTML = discernimento;
             sessionStorage.setItem('discernimento', discernimento);
+
+                        fetch(`/conquista/registrar/${id}`, {
+                method: 'POST',
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    idConquista: 16
+                })
+            }).then(resposta => {
+                if (resposta.ok) {
+                    console.log("Conquista registrada");
+                }
+            });
+            Toastify({
+                text: "Conquista desbloqueada!",
+                duration: 3000,
+                style: {
+                    background: "linear-gradient(to right, #555, #888)"
+
+                },
+            }).showToast();
         }
     }
 
@@ -190,6 +254,25 @@
     function fase21() {
         pararMusicas();
         ludwig2.play();
+
+                    fetch(`/conquista/registrar/${id}`, {
+                method: 'POST',
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    idConquista: 5
+                })
+            }).then(resposta => {
+                if (resposta.ok) {
+                    console.log("Conquista registrada");
+                }
+            });
+            Toastify({
+                text: "Conquista desbloqueada!",
+                duration: 3000,
+                style: {
+                background: "linear-gradient(to right, #5f0a87, #a4508b)"
+                },
+            }).showToast();
     }
 
 

@@ -14,6 +14,20 @@ function registrarConquista(req, res) {
         });
 }
 
+function listarConquista(req, res) {
+    const idUsuario = req.params.idUsuario;
+
+    conquistaModel.listarConquista(idUsuario)
+        .then(resultado => {
+            res.json(resultado);
+        })
+        .catch(erro => {
+            console.error("Erro ao buscar conquistas:", erro);
+            res.status(500).json({ erro: "Erro ao buscar conquistas" });
+        });
+}
+
 module.exports = {
-    registrarConquista
+    registrarConquista,
+    listarConquista
 };
